@@ -14,7 +14,7 @@ export default function ContactPage() {
   return (
     <div className="flex flex-col">
       {/* Hero Section */}
-      <section className="py-20 px-4 bg-gradient-to-br from-primary/5 to-accent/5">
+      <section className="py-20 px-4 bg-linear-to-br from-primary/5 to-accent/5">
         <div className="container mx-auto max-w-4xl text-center">
           <h1 className="text-4xl md:text-5xl font-bold mb-6 text-balance">Get In Touch</h1>
           <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
@@ -70,7 +70,7 @@ export default function ContactPage() {
                 <h2 className="text-2xl font-bold mb-6">Contact Information</h2>
                 <div className="space-y-6">
                   <div className="flex gap-4">
-                    <div className="flex-shrink-0">
+                    <div className="shrink-0">
                       <div className="h-12 w-12 rounded-full bg-primary/10 flex items-center justify-center">
                         <Mail className="h-6 w-6 text-primary" />
                       </div>
@@ -83,7 +83,7 @@ export default function ContactPage() {
                   </div>
 
                   <div className="flex gap-4">
-                    <div className="flex-shrink-0">
+                    <div className="shrink-0">
                       <div className="h-12 w-12 rounded-full bg-primary/10 flex items-center justify-center">
                         <Phone className="h-6 w-6 text-primary" />
                       </div>
@@ -96,7 +96,7 @@ export default function ContactPage() {
                   </div>
 
                   <div className="flex gap-4">
-                    <div className="flex-shrink-0">
+                    <div className="shrink-0">
                       <div className="h-12 w-12 rounded-full bg-primary/10 flex items-center justify-center">
                         <MapPin className="h-6 w-6 text-primary" />
                       </div>
