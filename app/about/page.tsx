@@ -30,7 +30,7 @@ export default function AboutPage() {
   return (
     <div className="flex flex-col">
       {/* Hero Section */}
-      <section className="py-20 px-4 bg-gradient-to-br from-primary/5 to-accent/5">
+      <section className="py-20 px-4 bg-linear-to-br from-primary/5 to-accent/5">
         <div className="container mx-auto max-w-4xl text-center">
           <Badge variant="secondary" className="mb-4">
             Our Mission
