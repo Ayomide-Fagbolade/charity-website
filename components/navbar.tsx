@@ -6,6 +6,7 @@ export function Navbar() {
       <nav className="container flex h-16 items-center justify-between" aria-label="Main navigation">
         <Link href="/" className="flex items-center space-x-2">
           <span className="text-xl font-bold text-foreground/80">
+          <span>  </span>
           <p>BRIDGE</p>
           <p>SEED</p></span>
           <span>  </span>
