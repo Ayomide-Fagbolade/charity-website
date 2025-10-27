@@ -33,7 +33,7 @@ export default async function Page() {
                 who need it most.
               </p>
               <div className="flex flex-wrap gap-4 pt-4">
-                <Button size="lg" className="foreground/80" asChild>
+                <Button size="lg"   asChild>
                   <Link href="/donate">
                     Donate Now <Heart className="ml-2 h-4 w-4" />
                   </Link>
