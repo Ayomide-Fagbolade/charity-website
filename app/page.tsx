@@ -94,7 +94,7 @@ export default async function Page() {
           <div className="grid md:grid-cols-3 gap-8">
             <Card>
               <CardHeader>
-                <Target className="h-12 w-12 text-primary mb-4" />
+                <Target className="h-12 w-12 text-secondary mb-4" />
                 <CardTitle>Evidence-Based</CardTitle>
                 <CardDescription className="leading-relaxed">
                   Every project is selected based on rigorous research and proven effectiveness in creating lasting
@@ -104,7 +104,7 @@ export default async function Page() {
             </Card>
             <Card>
               <CardHeader>
-                <TrendingUp className="h-12 w-12 text-primary mb-4" />
+                <TrendingUp className="h-12 w-12 text-secondary mb-4" />
                 <CardTitle>Maximum Impact</CardTitle>
                 <CardDescription className="leading-relaxed">
                   We focus on interventions that deliver the greatest benefit per dollar, ensuring your donation goes
@@ -114,7 +114,7 @@ export default async function Page() {
             </Card>
             <Card>
               <CardHeader>
-                <Users className="h-12 w-12 text-primary mb-4" />
+                <Users className="h-12 w-12 text-secondary mb-4" />
                 <CardTitle>Full Transparency</CardTitle>
                 <CardDescription className="leading-relaxed">
                   Track exactly where your money goes and see detailed reports on the outcomes of every project we
