@@ -48,7 +48,7 @@ export function Navbar() {
           <li>
             <Link
               href="/donate"
-              className="inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-white hover:bg-primary-hover transition-colors"
+              className="inline-flex items-center justify-center rounded-md bg-foreground/80 px-4 py-2 text-sm font-medium text-white hover:bg-primary-hover transition-colors"
             >
               Donate
             </Link>
