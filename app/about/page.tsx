@@ -36,11 +36,11 @@ export default function AboutPage() {
             Our Mission
           </Badge>
           <h1 className="text-4xl md:text-5xl font-bold mb-6 text-balance">
-            Evidence-Based Philanthropy for Maximum Impact
+            Together we rise, together they thrive.
           </h1>
           <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
-            We believe every donation should create the greatest possible positive change in the world. That's why we
-            use rigorous research and data to identify and support the most effective charitable interventions.
+            To bridge opportunity gaps by mobilizing collective compassion connecting individuals, students, and communities
+            to provide education, mentorship, and essential support for orphaned and underprivileged children.
           </p>
         </div>
       </section>
