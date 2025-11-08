@@ -1,3 +1,4 @@
+
 import Link from "next/link"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
@@ -6,57 +7,21 @@ import { Badge } from "@/components/ui/badge"
 import { ArrowRight, Heart, Target, Users, TrendingUp } from "lucide-react"
 import { getAllProjects, getAllPosts } from "@/lib/markdown"
 
+import { HeroCarousel } from "@/components/herocarousel"
+
+
 export default async function Page() {
   const projects = await getAllProjects()
   const posts = await getAllPosts()
   
-
   const featuredProjects = projects.slice(0, 3)
   const recentPosts = posts.slice(0, 3)
 
   return (
     <div className="flex flex-col">
       {/* Hero Section */}
-      <section className="relative py-20 md:py-32 px-4 overflow-hidden">
-        <div className="absolute inset-0 bg-linear-to-br from-primary/5 to-accent/5" aria-hidden="true" />
-        <div className="container mx-auto max-w-6xl relative">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div className="space-y-6">
-              <Badge variant="secondary" className="text-sm">
-                Evidence-Based Philanthropy
-              </Badge>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-balance">
-                Creating Measurable Impact Through Strategic Giving
-              </h1>
-              <p className="text-lg md:text-xl text-muted-foreground text-pretty leading-relaxed">
-                We support high-impact charity projects that make a real, measurable difference in the lives of those
-                who need it most.
-              </p>
-              <div className="flex flex-wrap gap-4 pt-4">
-                <Button size="lg"  asChild>
-                  <Link href="/donate">
-                    Donate Now <Heart className="ml-2 h-4 w-4" />
-                  </Link>
-                </Button>
-                <Button size="lg" variant="outline" asChild>
-                  <Link href="/projects">
-                    View Projects <ArrowRight className="ml-2 h-4 w-4" />
-                  </Link>
-                </Button>
-              </div>
-            </div>
-            <div className="relative h-[400px] md:h-[500px] rounded-lg overflow-hidden shadow-2xl">
-              <Image
-                src="/diverse-group-of-people-in-a-community-receiving-c.jpg"
-                alt="Community members accessing clean water from a newly built well"
-                fill
-                className="object-cover"
-                priority
-              />
-            </div>
-          </div>
-        </div>
-      </section>
+      <HeroCarousel />
+  
 
       {/* Impact Stats */}
       <section className="py-16 px-4 bg-primary text-white">
