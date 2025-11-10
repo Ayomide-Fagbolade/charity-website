@@ -11,19 +11,29 @@ export const metadata = {
 export default function AboutPage() {
   const teamMembers = [
     {
-      name: "Sarah Johnson",
+      name: "Adeoluwa Adeyemi",
       role: "Executive Director",
-      image: "/Sarah Johnson.jpg",
+      image: "/Ade.jpg",
     },
     {
-      name: "Michael Chen",
+      name: "Uzoma Owuama",
       role: "Director of Programs",
-      image: "/Michael Chen.jpg",
+      image: "/Uzoma.jpg",
     },
     {
-      name: "Emily Rodriguez",
+      name: "Sarfoah Addo Jochebed",
       role: "Research Director",
-      image: "/Emily Rodriguez.jpg",
+      image: "/Joe.jpg",
+    },
+       {
+      name: "Ayomide Fagbolade",
+      role: "Research Director",
+      image: "/Ayo.jpg",
+    },
+    {
+      name: "Emmanuel Osei",
+      role: "Research Director",
+      image: "/Emma.jpg",
     },
   ]
 
@@ -138,7 +148,7 @@ export default function AboutPage() {
           </div>
           <div className="grid md:grid-cols-3 gap-8">
             {teamMembers.map((member) => (
-              <Card key={member.name}>
+              <Card className="bg-background" key={member.name}>
                 <CardHeader className="text-center">
                   <div className="relative h-48 w-48 mx-auto mb-4 rounded-full overflow-hidden">
                     {member.image ? (
@@ -154,8 +164,8 @@ export default function AboutPage() {
                       </span>
                     )}
                   </div>
-                  <CardTitle>{member.name}</CardTitle>
-                  <CardDescription>{member.role}</CardDescription>
+                  <CardTitle className="text-foreground">{member.name}</CardTitle>
+                  <CardDescription className="text-foreground">{member.role}</CardDescription>
                 </CardHeader>
               </Card>
             ))}
