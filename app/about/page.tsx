@@ -10,16 +10,22 @@ export const metadata = {
 
 export default function AboutPage() {
   const teamMembers = [
+        {
+      name: "Emmanuel Osei",
+      role: "Research Director",
+      image: "/Emma.jpg",
+    },
+        {
+      name: "Uzoma Owuama",
+      role: "Director of Programs",
+      image: "/Uzoma.jpg",
+    },
     {
       name: "Adeoluwa Adeyemi",
       role: "Executive Director",
       image: "/Ade.jpg",
     },
-    {
-      name: "Uzoma Owuama",
-      role: "Director of Programs",
-      image: "/Uzoma.jpg",
-    },
+
     {
       name: "Sarfoah Addo Jochebed",
       role: "Research Director",
@@ -30,11 +36,7 @@ export default function AboutPage() {
       role: "Research Director",
       image: "/Ayo.jpg",
     },
-    {
-      name: "Emmanuel Osei",
-      role: "Research Director",
-      image: "/Emma.jpg",
-    },
+
   ]
 
   return (
@@ -97,37 +99,37 @@ export default function AboutPage() {
             </p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <Card>
+            <Card className="bg-background">
               <CardHeader>
-                <Target className="h-10 w-10 text-primary mb-3" />
-                <CardTitle className="text-lg">Evidence-Based</CardTitle>
+                <Target className="h-10 w-10 text-foreground  mb-3" />
+                <CardTitle className="text-lg text-foreground ">Evidence-Based</CardTitle>
                 <CardDescription className="leading-relaxed">
                   We rely on rigorous research and data to identify the most effective interventions
                 </CardDescription>
               </CardHeader>
             </Card>
-            <Card>
+            <Card className="bg-background">
               <CardHeader>
-                <TrendingUp className="h-10 w-10 text-primary mb-3" />
-                <CardTitle className="text-lg">Impact-Focused</CardTitle>
+                <TrendingUp className="h-10 w-10 text-foreground  mb-3" />
+                <CardTitle className="text-lg text-foreground ">Impact-Focused</CardTitle>
                 <CardDescription className="leading-relaxed">
                   We measure success by the real-world outcomes we achieve for those we serve
                 </CardDescription>
               </CardHeader>
             </Card>
-            <Card>
+            <Card className="bg-background">
               <CardHeader>
-                <Heart className="h-10 w-10 text-primary mb-3" />
-                <CardTitle className="text-lg">Transparent</CardTitle>
+                <Heart className="h-10 w-10 text-foreground  mb-3" />
+                <CardTitle className="text-lg  text-foreground ">Transparent</CardTitle>
                 <CardDescription className="leading-relaxed">
                   We provide complete visibility into where donations go and what they achieve
                 </CardDescription>
               </CardHeader>
             </Card>
-            <Card>
+            <Card className="bg-background">
               <CardHeader>
-                <Award className="h-10 w-10 text-primary mb-3" />
-                <CardTitle className="text-lg">Accountable</CardTitle>
+                <Award className="h-10 w-10 text-foreground mb-3" />
+                <CardTitle className="text-lg text-foreground ">Accountable</CardTitle>
                 <CardDescription className="leading-relaxed">
                   We hold ourselves to the highest standards of financial and operational excellence
                 </CardDescription>
