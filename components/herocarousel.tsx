@@ -13,7 +13,7 @@ const carouselImages = [
     alt: 'Community members accessing clean water from a newly built well',
   },
   {
-    src: '/team-of-diverse-professionals-working-together-on-.jpg',
+    src: '/carousel_images/Shadow of a helping hand.jpg',
     alt: 'Team of diverse professionals working together',
   },
 ];
