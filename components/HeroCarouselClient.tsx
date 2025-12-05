@@ -47,7 +47,7 @@ export default function HeroCarouselClient({ images }: HeroCarouselClientProps) 
             priority={index === 0}
           />
         ))}
-        <div className="absolute inset-0 bg-gradient-to-r from-black/20 via-black/10 to-black/20" />
+        <div className="absolute inset-0  bg-linear-to-r from-black/20 via-black/10 to-black/20" />
       </div>
 
       {/* Content */}
