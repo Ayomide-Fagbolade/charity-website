@@ -8,7 +8,7 @@ export function getCarouselImages() {
   return files
     .filter((file) => /\.(png|jpe?g|webp|gif)$/i.test(file))
     .map((file) => ({
-      src: `/carousel/${file}`,
+      src: `/carousel_images/${file}`,
       alt: file.replace(/\.[^/.]+$/, '').replace(/[-_]/g, ' '), // filename → readable alt text
     }));
 }
