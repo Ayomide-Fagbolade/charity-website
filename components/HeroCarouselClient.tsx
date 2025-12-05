@@ -7,10 +7,21 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Heart, ArrowRight } from 'lucide-react';
 
-export default function HeroCarouselClient({ images }) {
-  const [currentIndex, setCurrentIndex] = useState(0);
+type CarouselImage = {
+  src: string;
+  alt: string;
+};
+
+interface HeroCarouselClientProps {
+  images: CarouselImage[];
+}
+
+export default function HeroCarouselClient({ images }: HeroCarouselClientProps) {
+  const [currentIndex, setCurrentIndex] = useState<number>(0);
 
   useEffect(() => {
+    if (images.length === 0) return;
+
     const interval = setInterval(() => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
     }, 5000);
@@ -18,13 +29,15 @@ export default function HeroCarouselClient({ images }) {
     return () => clearInterval(interval);
   }, [images.length]);
 
+  if (!images.length) return null;
+
   return (
     <section className="relative py-20 md:py-32 px-4 overflow-hidden min-h-[600px] md:min-h-[700px]">
       {/* Background images */}
       <div className="absolute inset-0">
         {images.map((image, index) => (
           <Image
-            key={index}
+            key={image.src}
             src={image.src}
             alt={image.alt}
             fill
