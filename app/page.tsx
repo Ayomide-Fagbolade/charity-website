@@ -6,8 +6,9 @@ import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/ca
 import { Badge } from "@/components/ui/badge"
 import { ArrowRight, Heart, Target, Users, TrendingUp } from "lucide-react"
 import { getAllProjects, getAllPosts } from "@/lib/markdown"
+import HeroCarousel from "@/components/herocarousel"
 
-import { HeroCarousel } from "@/components/HeroCarousel"
+
 
 
 export default async function Page() {
