@@ -89,26 +89,28 @@ export function Navbar() {
         </button>
       </nav>
 
-      {/* Mobile Navigation Overlay */}
+      {/* Mobile Navigation */}
       <div
         className={cn(
-          "fixed inset-0 top-16 z-40 bg-background md:hidden transition-all duration-300 ease-in-out",
+          "fixed inset-0 top-16 z-40 bg-black/40 backdrop-blur-sm md:hidden transition-all duration-300 ease-in-out",
           isMenuOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
         )}
+        onClick={() => setIsMenuOpen(false)}
       >
         <div
           className={cn(
-            "flex flex-col items-center gap-8 pt-12 transition-transform duration-300 ease-in-out",
-            isMenuOpen ? "translate-y-0" : "-translate-y-10"
+            "w-full bg-background border-b shadow-xl p-8 flex flex-col items-center gap-8 transition-transform duration-300 ease-in-out",
+            isMenuOpen ? "translate-y-0" : "-translate-y-full"
           )}
+          onClick={(e) => e.stopPropagation()}
         >
-          <ul className="flex flex-col items-center gap-6">
+          <ul className="flex flex-col items-center gap-6 w-full">
             {navLinks.map((link) => (
-              <li key={link.href}>
+              <li key={link.href} className="w-full text-center">
                 <Link
                   href={link.href}
                   onClick={() => setIsMenuOpen(false)}
-                  className="text-lg font-medium text-foreground/80 hover:text-foreground transition-colors"
+                  className="block py-2 text-xl font-semibold text-foreground/80 hover:text-primary transition-colors border-b border-transparent hover:border-primary/20"
                 >
                   {link.label}
                 </Link>
@@ -118,7 +120,7 @@ export function Navbar() {
           <Link
             href="/donate"
             onClick={() => setIsMenuOpen(false)}
-            className="inline-flex items-center justify-center rounded-md bg-primary px-8 py-3 text-lg font-medium text-white hover:bg-primary/90 transition-all shadow-md active:scale-95"
+            className="w-full inline-flex items-center justify-center rounded-md bg-primary px-8 py-3 text-lg font-medium text-white hover:bg-primary/90 transition-all shadow-md active:scale-95"
           >
             Donate Now
           </Link>
