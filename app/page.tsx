@@ -6,7 +6,7 @@ import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/ca
 import { Badge } from "@/components/ui/badge"
 import { ArrowRight, Heart, Shield, Sun, Leaf } from "lucide-react"
 import { getAllProjects, getAllPosts } from "@/lib/markdown"
-import HeroCarousel from "@/components/HeroCarousel"
+import HeroCarousel from "@/components/herocarousel"
 
 
 
