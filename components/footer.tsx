@@ -131,7 +131,7 @@ export function Footer() {
 
           <div className="mt-8 border-t border-primary-foreground/20 pt-8 text-center flex flex-col items-center">
             <div className="flex items-center gap-3 mb-2">
-              <div className="relative h-10 w-10 bg-white/10 rounded-lg p-1.5">
+              <div className="relative h-10 w-10 rounded-lg p-1.5">
                 <Image
                   src="/logo-icon.png"
                   alt="BridgeSeed Logo"
