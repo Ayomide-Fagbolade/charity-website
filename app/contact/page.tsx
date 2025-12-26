@@ -134,6 +134,20 @@ export default function ContactPage() {
                   <p className="text-sm font-medium">partnerships@bridgeseed.org</p>
                 </CardContent>
               </Card>
+
+              <Card className="bg-muted/50">
+                <CardHeader>
+                  <CardTitle className="text-lg">Join Our Community</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-sm text-muted-foreground leading-relaxed mb-4">
+                    Connect with our community, stay updated on our initiatives, and be part of the movement.
+                  </p>
+                  <a href="https://chat.whatsapp.com/JxE9u64joH00V1RFesiejj" target="_blank" rel="noopener noreferrer" className="text-sm font-medium text-primary hover:underline">
+                    Join us on WhatsApp →
+                  </a>
+                </CardContent>
+              </Card>
             </div>
           </div>
         </div>

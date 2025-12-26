@@ -214,6 +214,16 @@ export default async function Page() {
             >
               <Link href="/about">Learn More About Us</Link>
             </Button>
+            <Button
+              size="lg"
+              variant="outline"
+              className="bg-transparent border-white text-white hover:bg-white/10"
+              asChild
+            >
+              <a href="https://chat.whatsapp.com/JxE9u64joH00V1RFesiejj" target="_blank" rel="noopener noreferrer">
+                Join Our Community
+              </a>
+            </Button>
           </div>
         </div>
       </section>

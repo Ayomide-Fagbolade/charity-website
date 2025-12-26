@@ -102,6 +102,11 @@ export function Footer() {
                   Donate
                 </Link>
               </li>
+              <li>
+                <Link href="https://chat.whatsapp.com/JxE9u64joH00V1RFesiejj" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground transition-colors">
+                  Join Our Community
+                </Link>
+              </li>
             </ul>
           </div>
         </div>
