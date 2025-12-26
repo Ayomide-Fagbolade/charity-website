@@ -13,28 +13,28 @@ export default function AboutPage() {
   const teamMembers = [
     {
       name: "Emmanuel Osei",
-      role: "Research Director",
+      role: "Operations & Administration Manager",
       image: "/Emma.jpg",
     },
     {
       name: "Uzoma Owuama",
-      role: "Director of Programs",
+      role: "Finance & Logistics Manager",
       image: "/Uzoma.jpg",
     },
     {
       name: "Adeoluwa Adeyemi",
-      role: "Executive Director",
+      role: "Outreach, Communications & Partnerships Officer",
       image: "/Ade.jpg",
     },
 
     {
       name: "Sarfoah Addo Jochebed",
-      role: "Research Director",
+      role: "Programs & Project Manager",
       image: "/Joe.jpg",
     },
     {
       name: "Ayomide Fagbolade",
-      role: "Research Director",
+      role: "Technology & Data Officer",
       image: "/Ayo.jpg",
     },
 

@@ -10,9 +10,7 @@ export function Footer() {
       <div className="py-16 px-4">
         <div className="container mx-auto max-w-4xl text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Make a Difference Today</h2>
-          <p className="text-lg md:text-xl opacity-90 mb-8 max-w-2xl mx-auto leading-relaxed text-primary-foreground/90">
-            Your donation directly supports programs that create lasting change.
-          </p>
+
           <div className="flex flex-wrap gap-4 justify-center">
             <Button size="lg" variant="secondary" asChild>
               <Link href="/donate">
@@ -43,25 +41,7 @@ export function Footer() {
 
       <div className="border-t border-primary-foreground/20">
         <div className="container py-12">
-          <div className="grid grid-cols-1 gap-8 md:grid-cols-4">
-            <div className="space-y-3">
-              <div className="flex items-center gap-2 mb-2">
-                <div className="relative h-12 w-12 bg-white/10 rounded-lg p-1">
-                  <Image
-                    src="/logo-icon.png"
-                    alt="BridgeSeed Foundation Logo"
-                    fill
-                    className="object-contain p-1"
-                  />
-                </div>
-                <span className="text-xl font-bold tracking-tight">
-                  BridgeSeed
-                </span>
-              </div>
-              <p className="text-sm text-primary-foreground/80 leading-relaxed">
-                Transforming excess into opportunity.
-              </p>
-            </div>
+          <div className="grid grid-cols-1 gap-8 md:grid-cols-3 text-center">
 
             <div className="space-y-3">
               <h3 className="text-sm font-semibold">Projects</h3>
@@ -149,8 +129,20 @@ export function Footer() {
             </div>
           </div>
 
-          <div className="mt-8 border-t border-primary-foreground/20 pt-8 text-center text-sm text-primary-foreground/60">
-            <p>&copy; {new Date().getFullYear()} BridgeSeed Foundation. All rights reserved.</p>
+          <div className="mt-8 border-t border-primary-foreground/20 pt-8 text-center flex flex-col items-center">
+            <div className="flex items-center gap-3 mb-2">
+              <div className="relative h-10 w-10 bg-white/10 rounded-lg p-1.5">
+                <Image
+                  src="/logo-icon.png"
+                  alt="BridgeSeed Logo"
+                  fill
+                  className="object-contain"
+                />
+              </div>
+              <p className="text-xl font-bold tracking-tight">BridgeSeed</p>
+            </div>
+            <p className="text-sm text-primary-foreground/70 mb-4 italic">Transforming excess into opportunity.</p>
+            <p className="text-xs text-primary-foreground/40">&copy; {new Date().getFullYear()} BridgeSeed Foundation. All rights reserved.</p>
           </div>
         </div>
       </div>
