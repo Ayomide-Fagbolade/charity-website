@@ -5,7 +5,7 @@ import { Heart, Shield, TrendingUp } from "lucide-react"
 
 export const metadata = {
   title: "Donate - BridgeSeed Foundation",
-  description: "Make a donation to support high-impact charity projects that create measurable change.",
+  description: "Make a donation to support sustainable initiatives that create measurable change.",
 }
 
 export default function DonatePage() {

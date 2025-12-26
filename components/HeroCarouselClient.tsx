@@ -41,9 +41,8 @@ export default function HeroCarouselClient({ images }: HeroCarouselClientProps) 
             src={image.src}
             alt={image.alt}
             fill
-            className={`object-cover transition-opacity duration-1000 ${
-              index === currentIndex ? 'opacity-100' : 'opacity-0'
-            }`}
+            className={`object-cover transition-opacity duration-1000 ${index === currentIndex ? 'opacity-100' : 'opacity-0'
+              }`}
             priority={index === 0}
           />
         ))}
@@ -58,10 +57,10 @@ export default function HeroCarouselClient({ images }: HeroCarouselClientProps) 
               Evidence-Based Philanthropy
             </Badge>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white">
-              Creating Measurable Impact Through Strategic Giving
+              Transforming Excess into Opportunity
             </h1>
             <p className="text-lg md:text-xl text-white/90 leading-relaxed">
-              We support high-impact charity projects that make a real, measurable difference.
+              Building sustainable campus communities by redistributing usable items to students and families in need.
             </p>
 
             <div className="flex flex-wrap gap-4 pt-4">
@@ -92,9 +91,8 @@ export default function HeroCarouselClient({ images }: HeroCarouselClientProps) 
           <button
             key={index}
             onClick={() => setCurrentIndex(index)}
-            className={`w-2 h-2 rounded-full transition-all ${
-              index === currentIndex ? 'bg-white w-8' : 'bg-white/50'
-            }`}
+            className={`w-2 h-2 rounded-full transition-all ${index === currentIndex ? 'bg-white w-8' : 'bg-white/50'
+              }`}
             aria-label={`Go to slide ${index + 1}`}
           />
         ))}

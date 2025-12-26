@@ -1,7 +1,7 @@
 import Image from "next/image"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { Target, Heart, TrendingUp, Award } from "lucide-react"
+import { Target, Heart, TrendingUp, Award, Sun, Shield, Lightbulb, Leaf } from "lucide-react"
 
 export const metadata = {
   title: "About Us - BridgeSeed Foundation",
@@ -44,14 +44,11 @@ export default function AboutPage() {
       {/* Hero Section */}
       <section className="py-20 px-4 bg-linear-to-br from-primary/5 to-accent/5">
         <div className="container mx-auto max-w-4xl text-center">
-          <Badge variant="secondary" className="mb-4">
-            Our Mission
-          </Badge>
           <h1 className="text-4xl md:text-5xl font-bold mb-6 text-balance">
             Transforming Excess into Opportunity
           </h1>
           <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
-            BridgeSeed Foundation connects students who have items they no longer need with those students and families who need them most. Through a dignified, accessible, and sustainable donation and thrift system, we transform excess into opportunity and waste into relief, ensuring belongings keep serving and stories keep unfolding.
+            Building sustainable campus communities by redistributing usable items to students and families in need.
           </p>
         </div>
       </section>
@@ -76,6 +73,12 @@ export default function AboutPage() {
                 </p>
               </div>
               <div>
+                <h3 className="text-2xl font-bold mb-3">Our Mission</h3>
+                <p className="text-muted-foreground leading-relaxed">
+                  BridgeSeed Foundation connects students who have items they no longer need with those students and families who need them most. Through a dignified, accessible, and sustainable donation and thrift system, we transform excess into opportunity and waste into relief, ensuring belongings keep serving and stories keep unfolding.
+                </p>
+              </div>
+              <div>
                 <h3 className="text-2xl font-bold mb-3">Our Vision</h3>
                 <p className="text-muted-foreground leading-relaxed">
                   To build a campus community where no usable item goes to waste, every belonging finds a new chapter and continues its journey of value and purpose.
@@ -95,40 +98,50 @@ export default function AboutPage() {
               These principles guide everything we do
             </p>
           </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 justify-center">
             <Card className="bg-background">
               <CardHeader>
-                <Target className="h-10 w-10 text-foreground  mb-3" />
-                <CardTitle className="text-lg text-foreground ">Evidence-Based</CardTitle>
+                <Sun className="h-10 w-10 text-foreground mb-3" />
+                <CardTitle className="text-lg text-foreground">Hope</CardTitle>
                 <CardDescription className="leading-relaxed">
-                  We rely on rigorous research and data to identify the most effective interventions
+                  We nurture belief in better tomorrows.
                 </CardDescription>
               </CardHeader>
             </Card>
             <Card className="bg-background">
               <CardHeader>
-                <TrendingUp className="h-10 w-10 text-foreground  mb-3" />
-                <CardTitle className="text-lg text-foreground ">Impact-Focused</CardTitle>
+                <Shield className="h-10 w-10 text-foreground mb-3" />
+                <CardTitle className="text-lg text-foreground">Integrity</CardTitle>
                 <CardDescription className="leading-relaxed">
-                  We measure success by the real-world outcomes we achieve for those we serve
+                  We act honestly and transparently, ensuring every donation serves its true purpose.
                 </CardDescription>
               </CardHeader>
             </Card>
             <Card className="bg-background">
               <CardHeader>
-                <Heart className="h-10 w-10 text-foreground  mb-3" />
-                <CardTitle className="text-lg  text-foreground ">Transparent</CardTitle>
+                <Heart className="h-10 w-10 text-foreground mb-3" />
+                <CardTitle className="text-lg text-foreground">Empathy</CardTitle>
                 <CardDescription className="leading-relaxed">
-                  We provide complete visibility into where donations go and what they achieve
+                  We listen, care, and act with compassion.
                 </CardDescription>
               </CardHeader>
             </Card>
-            <Card className="bg-background">
+            <Card className="bg-background lg:col-start-1 lg:ml-auto">
+              {/* Centering trick for last row if needed, or just let them flow */}
               <CardHeader>
-                <Award className="h-10 w-10 text-foreground mb-3" />
-                <CardTitle className="text-lg text-foreground ">Accountable</CardTitle>
+                <Lightbulb className="h-10 w-10 text-foreground mb-3" />
+                <CardTitle className="text-lg text-foreground">Innovation</CardTitle>
                 <CardDescription className="leading-relaxed">
-                  We hold ourselves to the highest standards of financial and operational excellence
+                  We use creativity and collective action to solve social challenges.
+                </CardDescription>
+              </CardHeader>
+            </Card>
+            <Card className="bg-background lg:col-start-2 lg:mr-auto">
+              <CardHeader>
+                <Leaf className="h-10 w-10 text-foreground mb-3" />
+                <CardTitle className="text-lg text-foreground">Sustainability</CardTitle>
+                <CardDescription className="leading-relaxed">
+                  We plant seeds for growth that lasts beyond us.
                 </CardDescription>
               </CardHeader>
             </Card>
