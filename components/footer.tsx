@@ -136,7 +136,7 @@ export function Footer() {
                   src="/logo-icon.png"
                   alt="BridgeSeed Logo"
                   fill
-                  className="object-contain"
+                  className="object-contain brightness-0 invert"
                 />
               </div>
               <p className="text-xl font-bold tracking-tight">BridgeSeed</p>
