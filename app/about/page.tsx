@@ -98,8 +98,8 @@ export default function AboutPage() {
               These principles guide everything we do
             </p>
           </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 justify-center">
-            <Card className="bg-background">
+          <div className="grid md:grid-cols-2 lg:grid-cols-6 gap-6 justify-center">
+            <Card className="bg-background lg:col-span-2">
               <CardHeader>
                 <Sun className="h-10 w-10 text-foreground mb-3" />
                 <CardTitle className="text-lg text-foreground">Hope</CardTitle>
@@ -108,7 +108,7 @@ export default function AboutPage() {
                 </CardDescription>
               </CardHeader>
             </Card>
-            <Card className="bg-background">
+            <Card className="bg-background lg:col-span-2">
               <CardHeader>
                 <Shield className="h-10 w-10 text-foreground mb-3" />
                 <CardTitle className="text-lg text-foreground">Integrity</CardTitle>
@@ -117,7 +117,7 @@ export default function AboutPage() {
                 </CardDescription>
               </CardHeader>
             </Card>
-            <Card className="bg-background">
+            <Card className="bg-background lg:col-span-2">
               <CardHeader>
                 <Heart className="h-10 w-10 text-foreground mb-3" />
                 <CardTitle className="text-lg text-foreground">Empathy</CardTitle>
@@ -126,8 +126,7 @@ export default function AboutPage() {
                 </CardDescription>
               </CardHeader>
             </Card>
-            <Card className="bg-background lg:col-start-1 lg:ml-auto">
-              {/* Centering trick for last row if needed, or just let them flow */}
+            <Card className="bg-background lg:col-span-2 lg:col-start-2">
               <CardHeader>
                 <Lightbulb className="h-10 w-10 text-foreground mb-3" />
                 <CardTitle className="text-lg text-foreground">Innovation</CardTitle>
@@ -136,7 +135,7 @@ export default function AboutPage() {
                 </CardDescription>
               </CardHeader>
             </Card>
-            <Card className="bg-background lg:col-start-2 lg:mr-auto">
+            <Card className="bg-background md:col-span-2 md:w-1/2 md:mx-auto lg:col-span-2 lg:w-auto lg:mx-0">
               <CardHeader>
                 <Leaf className="h-10 w-10 text-foreground mb-3" />
                 <CardTitle className="text-lg text-foreground">Sustainability</CardTitle>
