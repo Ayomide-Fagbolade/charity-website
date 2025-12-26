@@ -49,45 +49,32 @@ export default async function Page() {
       </section>
 
       {/* Our Approach */}
-      <section className="py-20 px-4">
-        <div className="container mx-auto max-w-6xl">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Our Approach to Impact</h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              We use rigorous evidence and data to identify the most effective interventions
-            </p>
-          </div>
-          <div className="grid md:grid-cols-3 gap-8">
-            <Card>
-              <CardHeader>
-                <Target className="h-12 w-12 text-secondary mb-4" />
-                <CardTitle>Evidence-Based</CardTitle>
-                <CardDescription className="leading-relaxed">
-                  Every project is selected based on rigorous research and proven effectiveness in creating lasting
-                  change
-                </CardDescription>
-              </CardHeader>
-            </Card>
-            <Card>
-              <CardHeader>
-                <TrendingUp className="h-12 w-12 text-secondary mb-4" />
-                <CardTitle>Maximum Impact</CardTitle>
-                <CardDescription className="leading-relaxed">
-                  We focus on interventions that deliver the greatest benefit per dollar, ensuring your donation goes
-                  further
-                </CardDescription>
-              </CardHeader>
-            </Card>
-            <Card>
-              <CardHeader>
-                <Users className="h-12 w-12 text-secondary mb-4" />
-                <CardTitle>Full Transparency</CardTitle>
-                <CardDescription className="leading-relaxed">
-                  Track exactly where your money goes and see detailed reports on the outcomes of every project we
-                  support
-                </CardDescription>
-              </CardHeader>
-            </Card>
+      <section className="py-24 px-4 bg-background">
+        <div className="container mx-auto max-w-5xl">
+          <h2 className="text-4xl md:text-5xl font-bold mb-8 tracking-tight">
+            What is BridgeSeed's Approach?
+          </h2>
+
+          <div className="w-full border-t border-foreground/20 mb-12"></div>
+
+          <div className="grid md:grid-cols-2 gap-12 md:gap-24 relative">
+            <div className="space-y-4">
+              <h3 className="text-3xl font-semibold tracking-tight">A Philosophy</h3>
+              <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
+                We believe that charity should be effective, not just well-intentioned. By using data to identify genuine needs and redistributing existing surplus resources, we create sustainable solutions that maximize impact per dollar.
+                <br /><br />
+                <Link href="/about" className="underline underline-offset-4 hover:text-primary transition-colors">
+                  Read more about our mission.
+                </Link>
+              </p>
+            </div>
+
+            <div className="relative md:border-l md:border-foreground/20 md:pl-12 space-y-4">
+              <h3 className="text-3xl font-semibold tracking-tight">A Movement</h3>
+              <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
+                BridgeSeed is more than a foundation; it is a network of compassionate individuals. From student volunteers to global donors, we are united by a shared commitment to building dignity, reducing waste, and empowering the next generation.
+              </p>
+            </div>
           </div>
         </div>
       </section>
