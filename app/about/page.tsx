@@ -61,24 +61,26 @@ export default function AboutPage() {
             <div className="relative h-[400px] rounded-lg overflow-hidden shadow-lg group">
               <HeroCarousel variant="minimal" className="h-full w-full" />
             </div>
-            <div className="space-y-6">
-              <div>
+            <div className="space-y-10">
+              <div className="border-l-2 border-primary/30 pl-6">
                 <h2 className="text-3xl md:text-4xl font-bold mb-4">About BridgeSeed</h2>
                 <p className="text-muted-foreground leading-relaxed">
                   BridgeSeed Foundation (BSF) is a youth-led, non-profit organization that builds sustainable campus communities by redistributing usable items to students and families in need, transforming excess into opportunity and reducing waste with dignity and purpose.
                 </p>
               </div>
-              <div>
-                <h3 className="text-2xl font-bold mb-3">Our Mission</h3>
-                <p className="text-muted-foreground leading-relaxed">
-                  BridgeSeed Foundation connects students who have items they no longer need with those students and families who need them most. Through a dignified, accessible, and sustainable donation and thrift system, we transform excess into opportunity and waste into relief, ensuring belongings keep serving and stories keep unfolding.
-                </p>
-              </div>
-              <div>
-                <h3 className="text-2xl font-bold mb-3">Our Vision</h3>
-                <p className="text-muted-foreground leading-relaxed">
-                  To build a campus community where no usable item goes to waste, every belonging finds a new chapter and continues its journey of value and purpose.
-                </p>
+              <div className="grid grid-cols-1 gap-8">
+                <div className="border-l-2 border-primary/30 pl-6">
+                  <h3 className="text-2xl font-bold mb-3">Our Mission</h3>
+                  <p className="text-muted-foreground leading-relaxed">
+                    BridgeSeed Foundation connects students who have items they no longer need with those students and families who need them most. Through a dignified, accessible, and sustainable donation and thrift system, we transform excess into opportunity and waste into relief, ensuring belongings keep serving and stories keep unfolding.
+                  </p>
+                </div>
+                <div className="border-l-2 border-primary/30 pl-6">
+                  <h3 className="text-2xl font-bold mb-3">Our Vision</h3>
+                  <p className="text-muted-foreground leading-relaxed">
+                    To build a campus community where no usable item goes to waste, every belonging finds a new chapter and continues its journey of value and purpose.
+                  </p>
+                </div>
               </div>
             </div>
           </div>

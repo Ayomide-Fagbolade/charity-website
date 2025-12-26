@@ -82,12 +82,12 @@ export default async function Page() {
       {/* Featured Projects */}
       <section className="py-20 px-4 bg-muted/30">
         <div className="container mx-auto max-w-6xl">
-          <div className="flex justify-between items-end mb-12">
-            <div>
-              <h2 className="text-3xl md:text-4xl font-bold mb-2">Featured Projects</h2>
-              <p className="text-muted-foreground">High-impact initiatives making a difference</p>
+          <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-12">
+            <div className="flex items-center gap-4 flex-grow">
+              <h2 className="text-3xl md:text-4xl font-bold whitespace-nowrap">Featured Projects</h2>
+              <div className="h-px bg-primary/20 flex-grow hidden md:block" />
             </div>
-            <Button variant="ghost" asChild className="hidden md:flex">
+            <Button variant="ghost" asChild className="hidden md:flex shrink-0">
               <Link href="/projects">
                 View All Projects <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
@@ -146,12 +146,12 @@ export default async function Page() {
       {/* Latest Blog Posts */}
       <section className="py-20 px-4">
         <div className="container mx-auto max-w-6xl">
-          <div className="flex justify-between items-end mb-12">
-            <div>
-              <h2 className="text-3xl md:text-4xl font-bold mb-2">Latest Updates</h2>
-              <p className="text-muted-foreground">News, insights, and impact stories</p>
+          <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-12">
+            <div className="flex items-center gap-4 flex-grow">
+              <h2 className="text-3xl md:text-4xl font-bold whitespace-nowrap">Latest Updates</h2>
+              <div className="h-px bg-primary/20 flex-grow hidden md:block" />
             </div>
-            <Button variant="ghost" asChild className="hidden md:flex">
+            <Button variant="ghost" asChild className="hidden md:flex shrink-0">
               <Link href="/blog">
                 View All Posts <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
