@@ -5,7 +5,7 @@ import { Badge } from "@/components/ui/badge"
 import { getAllProjects } from "@/lib/markdown"
 
 export const metadata = {
-  title: "Our Projects - Impact Charity",
+  title: "Our Projects - BridgeSeed Foundation",
   description: "Explore our portfolio of high-impact charity projects making a measurable difference worldwide.",
 }
 

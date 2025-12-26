@@ -16,7 +16,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Bridge Seed Foundation",
+  title: "BridgeSeed Foundation",
   description: "BridgeSeed Foundation (BSF) is a youth-driven, non-profit charitable organization that empowers young people in need through community-driven support.",
 };
 
@@ -35,7 +35,7 @@ export default function RootLayout({
           defaultTheme="system"
           enableSystem
           disableTransitionOnChange
-        > 
+        >
           <Navbar />
           <main>{children}</main>
           <Footer />

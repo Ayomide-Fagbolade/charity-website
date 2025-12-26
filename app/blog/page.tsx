@@ -3,7 +3,7 @@ import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/ca
 import { getAllPosts } from "@/lib/markdown"
 
 export const metadata = {
-  title: "Blog - Impact Charity",
+  title: "Blog - BridgeSeed Foundation",
   description: "Read our latest updates, insights, and stories about effective philanthropy and charitable impact.",
 }
 

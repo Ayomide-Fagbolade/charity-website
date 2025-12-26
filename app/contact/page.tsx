@@ -6,7 +6,7 @@ import { Label } from "@/components/ui/label"
 import { Mail, MapPin, Phone } from "lucide-react"
 
 export const metadata = {
-  title: "Contact Us - Impact Charity",
+  title: "Contact Us - BridgeSeed Foundation",
   description: "Get in touch with our team to learn more about our work or discuss partnership opportunities.",
 }
 
@@ -77,8 +77,8 @@ export default function ContactPage() {
                     </div>
                     <div>
                       <h3 className="font-semibold mb-1">Email</h3>
-                      <p className="text-muted-foreground">info@impactcharity.org</p>
-                      <p className="text-muted-foreground">partnerships@impactcharity.org</p>
+                      <p className="text-muted-foreground">info@bridgeseed.org</p>
+                      <p className="text-muted-foreground">partnerships@bridgeseed.org</p>
                     </div>
                   </div>
 
@@ -118,7 +118,7 @@ export default function ContactPage() {
                   <p className="text-sm text-muted-foreground leading-relaxed mb-4">
                     For press and media inquiries, please contact our communications team:
                   </p>
-                  <p className="text-sm font-medium">media@impactcharity.org</p>
+                  <p className="text-sm font-medium">media@bridgeseed.org</p>
                 </CardContent>
               </Card>
 
@@ -131,7 +131,7 @@ export default function ContactPage() {
                     Interested in partnering with us? We're always looking for like-minded organizations to collaborate
                     with.
                   </p>
-                  <p className="text-sm font-medium">partnerships@impactcharity.org</p>
+                  <p className="text-sm font-medium">partnerships@bridgeseed.org</p>
                 </CardContent>
               </Card>
             </div>

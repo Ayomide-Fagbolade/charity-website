@@ -6,9 +6,9 @@ export function Footer() {
       <div className="container py-12">
         <div className="grid grid-cols-1 gap-8 md:grid-cols-4">
           <div className="space-y-3">
-            <h3 className="font-serif text-lg font-semibold">Impact Charity</h3>
+            <h3 className="font-serif text-lg font-semibold">BridgeSeed Foundation</h3>
             <p className="text-sm text-muted-foreground leading-relaxed">
-              Evidence-based philanthropy for maximum impact.
+              Transforming excess into opportunity.
             </p>
           </div>
 
@@ -86,7 +86,7 @@ export function Footer() {
         </div>
 
         <div className="mt-8 border-t pt-8 text-center text-sm text-muted-foreground">
-          <p>&copy; {new Date().getFullYear()} Impact Charity. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} BridgeSeed Foundation. All rights reserved.</p>
         </div>
       </div>
     </footer>

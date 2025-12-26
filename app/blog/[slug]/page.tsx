@@ -21,7 +21,7 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   }
 
   return {
-    title: `${post.title} - Impact Charity Blog`,
+    title: `${post.title} - BridgeSeed Foundation Blog`,
     description: post.excerpt,
   }
 }

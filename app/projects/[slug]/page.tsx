@@ -24,7 +24,7 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   }
 
   return {
-    title: `${project.title} - Impact Charity`,
+    title: `${project.title} - BridgeSeed Foundation`,
     description: project.description,
   }
 }

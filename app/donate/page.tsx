@@ -4,7 +4,7 @@ import { Badge } from "@/components/ui/badge"
 import { Heart, Shield, TrendingUp } from "lucide-react"
 
 export const metadata = {
-  title: "Donate - Impact Charity",
+  title: "Donate - BridgeSeed Foundation",
   description: "Make a donation to support high-impact charity projects that create measurable change.",
 }
 
