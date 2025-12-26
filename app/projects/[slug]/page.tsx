@@ -83,12 +83,7 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
           </div>
 
           <div className="grid md:grid-cols-3 gap-6 mb-12">
-            <Card>
-              <CardHeader>
-                <CardTitle className="text-sm text-muted-foreground">Impact Score</CardTitle>
-                <div className="text-3xl font-bold text-primary">{project.impact_score}/100</div>
-              </CardHeader>
-            </Card>
+
             <Card>
               <CardHeader>
                 <CardTitle className="text-sm text-muted-foreground">Status</CardTitle>

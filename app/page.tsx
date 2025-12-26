@@ -125,12 +125,7 @@ export default async function Page() {
                       </div>
                       <CardTitle className="text-xl">{project.title}</CardTitle>
                       <CardDescription className="line-clamp-2 leading-relaxed">{project.description}</CardDescription>
-                      <div className="pt-4">
-                        <div className="flex items-center gap-2 text-sm">
-                          <span className="font-semibold text-primary">Impact Score:</span>
-                          <span className="font-bold">{project.impact_score}/100</span>
-                        </div>
-                      </div>
+
                     </CardHeader>
                   </Card>
                 </Link>
@@ -192,41 +187,7 @@ export default async function Page() {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-20 px-4 bg-linear-to-br from-primary to-primary/80 text-white">
-        <div className="container mx-auto max-w-4xl text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Make a Difference Today</h2>
-          <p className="text-lg md:text-xl opacity-90 mb-8 max-w-2xl mx-auto leading-relaxed">
-            Your donation directly supports evidence-based programs that create lasting change. Every dollar is tracked
-            and reported with full transparency.
-          </p>
-          <div className="flex flex-wrap gap-4 justify-center">
-            <Button size="lg" variant="secondary" asChild>
-              <Link href="/donate">
-                Donate Now <Heart className="ml-2 h-5 w-5" />
-              </Link>
-            </Button>
-            <Button
-              size="lg"
-              variant="outline"
-              className="bg-transparent border-white text-white hover:bg-white/10"
-              asChild
-            >
-              <Link href="/about">Learn More About Us</Link>
-            </Button>
-            <Button
-              size="lg"
-              variant="outline"
-              className="bg-transparent border-white text-white hover:bg-white/10"
-              asChild
-            >
-              <a href="https://chat.whatsapp.com/JxE9u64joH00V1RFesiejj" target="_blank" rel="noopener noreferrer">
-                Join Our Community
-              </a>
-            </Button>
-          </div>
-        </div>
-      </section>
+
     </div>
   )
 }

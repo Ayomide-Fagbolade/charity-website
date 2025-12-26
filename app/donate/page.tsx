@@ -119,10 +119,7 @@ export default async function DonatePage() {
                   </CardHeader>
                   <CardContent className="pt-0">
                     <div className="flex items-center justify-between">
-                      <div className="flex items-center gap-2">
-                        <span className="text-sm text-muted-foreground">Impact:</span>
-                        <span className="font-bold text-primary">{project.impact_score}/100</span>
-                      </div>
+
                       <Link href={`/projects/${project.slug}`}>
                         <Button variant="outline" size="sm">
                           Learn More

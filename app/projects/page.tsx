@@ -61,12 +61,7 @@ export default async function ProjectsPage() {
                       <CardDescription className="line-clamp-2 leading-relaxed">
                         {project.description}
                       </CardDescription>
-                      <div className="pt-4">
-                        <div className="flex items-center gap-2 text-sm">
-                          <span className="font-semibold text-primary">Impact Score:</span>
-                          <span className="font-bold">{project.impact_score}/100</span>
-                        </div>
-                      </div>
+
                     </CardHeader>
                   </Card>
                 </Link>
