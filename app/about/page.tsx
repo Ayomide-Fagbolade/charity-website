@@ -4,18 +4,18 @@ import { Badge } from "@/components/ui/badge"
 import { Target, Heart, TrendingUp, Award } from "lucide-react"
 
 export const metadata = {
-  title: "About Us - Impact Charity",
-  description: "Learn about our mission, approach, and commitment to evidence-based philanthropy.",
+  title: "About Us - BridgeSeed Foundation",
+  description: "Building sustainable campus communities by redistributing usable items to students and families in need.",
 }
 
 export default function AboutPage() {
   const teamMembers = [
-        {
+    {
       name: "Emmanuel Osei",
       role: "Research Director",
       image: "/Emma.jpg",
     },
-        {
+    {
       name: "Uzoma Owuama",
       role: "Director of Programs",
       image: "/Uzoma.jpg",
@@ -31,7 +31,7 @@ export default function AboutPage() {
       role: "Research Director",
       image: "/Joe.jpg",
     },
-       {
+    {
       name: "Ayomide Fagbolade",
       role: "Research Director",
       image: "/Ayo.jpg",
@@ -48,11 +48,10 @@ export default function AboutPage() {
             Our Mission
           </Badge>
           <h1 className="text-4xl md:text-5xl font-bold mb-6 text-balance">
-            Together we rise, together they thrive.
+            Transforming Excess into Opportunity
           </h1>
           <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
-            To bridge opportunity gaps by mobilizing collective compassion connecting individuals, students, and communities
-            to provide education, mentorship, and essential support for orphaned and underprivileged children.
+            BridgeSeed Foundation connects students who have items they no longer need with those students and families who need them most. Through a dignified, accessible, and sustainable donation and thrift system, we transform excess into opportunity and waste into relief, ensuring belongings keep serving and stories keep unfolding.
           </p>
         </div>
       </section>
@@ -70,20 +69,18 @@ export default function AboutPage() {
               />
             </div>
             <div className="space-y-6">
-              <h2 className="text-3xl md:text-4xl font-bold">Our Story</h2>
-              <p className="text-muted-foreground leading-relaxed">
-                Founded in 2018, Impact Charity was born from a simple question: How can we ensure that charitable
-                donations create the most good possible?
-              </p>
-              <p className="text-muted-foreground leading-relaxed">
-                We discovered that not all charitable interventions are equally effective. Some programs can be 10x,
-                even 100x more impactful than others. By focusing on evidence-based giving, we help donors maximize
-                their positive impact on the world.
-              </p>
-              <p className="text-muted-foreground leading-relaxed">
-                Today, we've helped direct over $10 million to high-impact programs, improving the lives of more than
-                50,000 people across 8 countries.
-              </p>
+              <div>
+                <h2 className="text-3xl md:text-4xl font-bold mb-4">About BridgeSeed</h2>
+                <p className="text-muted-foreground leading-relaxed">
+                  BridgeSeed Foundation (BSF) is a youth-led, non-profit organization that builds sustainable campus communities by redistributing usable items to students and families in need, transforming excess into opportunity and reducing waste with dignity and purpose.
+                </p>
+              </div>
+              <div>
+                <h3 className="text-2xl font-bold mb-3">Our Vision</h3>
+                <p className="text-muted-foreground leading-relaxed">
+                  To build a campus community where no usable item goes to waste, every belonging finds a new chapter and continues its journey of value and purpose.
+                </p>
+              </div>
             </div>
           </div>
         </div>
