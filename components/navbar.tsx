@@ -6,7 +6,7 @@ export function Navbar() {
     <header className="sticky top-0 z-40 w-full border-b bg-background/95 backdrop-blur supports-backdrop-filter:bg-background/60">
       <nav className="container px-1 flex h-16 items-center justify-between" aria-label="Main navigation">
         <Link href="/" className="flex items-center gap-2 mb-1">
-          <div className="relative h-10 w-10 bg-foreground/5 rounded-md flex items-center justify-center">
+          <div className="relative h-10 w-10  rounded-md flex items-center justify-center">
             <Image
               src="/logo-icon.png"
               alt="BridgeSeed Foundation Logo"
