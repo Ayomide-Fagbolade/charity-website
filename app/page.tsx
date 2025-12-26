@@ -4,7 +4,7 @@ import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { ArrowRight, Heart, Target, Users, TrendingUp } from "lucide-react"
+import { ArrowRight, Heart, Shield, Sun, Leaf } from "lucide-react"
 import { getAllProjects, getAllPosts } from "@/lib/markdown"
 import HeroCarousel from "@/components/HeroCarousel"
 
@@ -24,25 +24,25 @@ export default async function Page() {
       <HeroCarousel />
 
 
-      {/* Impact Stats */}
-      <section className="py-16 px-4 bg-primary text-white">
+      {/* Our Core Values */}
+      <section className="py-16 px-4 border-y border-border/50 bg-background/50 backdrop-blur-sm">
         <div className="container mx-auto max-w-6xl">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-            <div className="space-y-2">
-              <div className="text-4xl md:text-5xl font-bold">50K+</div>
-              <div className="text-sm md:text-base opacity-90">Lives Impacted</div>
+            <div className="group flex flex-col items-center space-y-3 p-4 rounded-xl transition-all hover:bg-muted/30 hover:scale-105 cursor-default">
+              <Sun className="h-10 w-10 text-primary transition-transform group-hover:scale-110 duration-300" />
+              <div className="text-xl font-bold tracking-tight">Hope</div>
             </div>
-            <div className="space-y-2">
-              <div className="text-4xl md:text-5xl font-bold">12</div>
-              <div className="text-sm md:text-base opacity-90">Active Projects</div>
+            <div className="group flex flex-col items-center space-y-3 p-4 rounded-xl transition-all hover:bg-muted/30 hover:scale-105 cursor-default">
+              <Shield className="h-10 w-10 text-primary transition-transform group-hover:scale-110 duration-300" />
+              <div className="text-xl font-bold tracking-tight">Integrity</div>
             </div>
-            <div className="space-y-2">
-              <div className="text-4xl md:text-5xl font-bold">95%</div>
-              <div className="text-sm md:text-base opacity-90">To Programs</div>
+            <div className="group flex flex-col items-center space-y-3 p-4 rounded-xl transition-all hover:bg-muted/30 hover:scale-105 cursor-default">
+              <Heart className="h-10 w-10 text-primary transition-transform group-hover:scale-110 duration-300" />
+              <div className="text-xl font-bold tracking-tight">Empathy</div>
             </div>
-            <div className="space-y-2">
-              <div className="text-4xl md:text-5xl font-bold">8</div>
-              <div className="text-sm md:text-base opacity-90">Countries</div>
+            <div className="group flex flex-col items-center space-y-3 p-4 rounded-xl transition-all hover:bg-muted/30 hover:scale-105 cursor-default">
+              <Leaf className="h-10 w-10 text-primary transition-transform group-hover:scale-110 duration-300" />
+              <div className="text-xl font-bold tracking-tight">Sustainability</div>
             </div>
           </div>
         </div>
