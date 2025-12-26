@@ -2,7 +2,7 @@ import Image from "next/image"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Target, Heart, TrendingUp, Award, Sun, Shield, Lightbulb, Leaf, CreditCard, Megaphone, Briefcase, Cpu, UserCheck } from "lucide-react"
-import HeroCarousel from "@/components/HeroCarousel"
+import HeroCarousel from "@/components/herocarousel"
 
 export const metadata = {
   title: "About Us - BridgeSeed Foundation",
