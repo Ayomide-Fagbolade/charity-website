@@ -155,9 +155,9 @@ export default function AboutPage() {
               Dedicated professionals committed to maximizing charitable impact
             </p>
           </div>
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="flex flex-wrap justify-center gap-8">
             {teamMembers.map((member) => (
-              <Card className="bg-background" key={member.name}>
+              <Card className="bg-background w-full md:w-80" key={member.name}>
                 <CardHeader className="text-center">
                   <div className="relative h-48 w-48 mx-auto mb-4 rounded-full overflow-hidden">
                     {member.image ? (
