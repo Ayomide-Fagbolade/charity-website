@@ -1,4 +1,5 @@
 import Link from "next/link"
+import Image from "next/image"
 
 export function Footer() {
   return (
@@ -6,7 +7,19 @@ export function Footer() {
       <div className="container py-12">
         <div className="grid grid-cols-1 gap-8 md:grid-cols-4">
           <div className="space-y-3">
-            <h3 className="font-serif text-lg font-semibold">BridgeSeed Foundation</h3>
+            <div className="flex items-center gap-2 mb-2">
+              <div className="relative h-12 w-12">
+                <Image
+                  src="/logo-icon.png"
+                  alt="BridgeSeed Foundation Logo"
+                  fill
+                  className="object-contain"
+                />
+              </div>
+              <span className="text-xl font-bold tracking-tight text-foreground">
+                BridgeSeed
+              </span>
+            </div>
             <p className="text-sm text-muted-foreground leading-relaxed">
               Transforming excess into opportunity.
             </p>
@@ -22,18 +35,26 @@ export function Footer() {
               </li>
               <li>
                 <Link
-                  href="/projects?cause=global-health"
+                  href="/projects/disaster-relief"
                   className="text-muted-foreground hover:text-foreground transition-colors"
                 >
-                  Global Health
+                  Disaster Relief
                 </Link>
               </li>
               <li>
                 <Link
-                  href="/projects?cause=education"
+                  href="/projects/orphanage-support"
                   className="text-muted-foreground hover:text-foreground transition-colors"
                 >
-                  Education
+                  Orphanage Support
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/projects/student-marketplace"
+                  className="text-muted-foreground hover:text-foreground transition-colors"
+                >
+                  Student Marketplace
                 </Link>
               </li>
             </ul>

@@ -2,6 +2,7 @@ import Image from "next/image"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Target, Heart, TrendingUp, Award, Sun, Shield, Lightbulb, Leaf } from "lucide-react"
+import HeroCarousel from "@/components/HeroCarousel"
 
 export const metadata = {
   title: "About Us - BridgeSeed Foundation",
@@ -57,13 +58,8 @@ export default function AboutPage() {
       <section className="py-20 px-4">
         <div className="container mx-auto max-w-6xl">
           <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div className="relative h-[400px] rounded-lg overflow-hidden shadow-lg">
-              <Image
-                src="/team-of-diverse-professionals-working-together-on-.jpg"
-                alt="Our team working on impact measurement"
-                fill
-                className="object-cover"
-              />
+            <div className="relative h-[400px] rounded-lg overflow-hidden shadow-lg group">
+              <HeroCarousel variant="minimal" className="h-full w-full" />
             </div>
             <div className="space-y-6">
               <div>

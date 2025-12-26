@@ -1,12 +1,23 @@
 import Link from "next/link"
+import Image from "next/image"
 
 export function Navbar() {
   return (
     <header className="sticky top-0 z-40 w-full border-b bg-background/95 backdrop-blur supports-backdrop-filter:bg-background/60">
       <nav className="container px-1 flex h-16 items-center justify-between" aria-label="Main navigation">
-        <Link href="/" className="flex items-center space-x-2">
-          <span className="text-xl font-bold tracking-tight">BridgeSeed</span>
-          <span>  </span>
+        <Link href="/" className="flex items-center gap-2 mb-1">
+          <div className="relative h-10 w-10">
+            <Image
+              src="/logo-icon.png"
+              alt="BridgeSeed Foundation Logo"
+              fill
+              className="object-contain"
+              priority
+            />
+          </div>
+          <span className="text-xl font-bold tracking-tight text-foreground">
+            BridgeSeed
+          </span>
         </Link>
 
         <ul className="flex items-center gap-6">

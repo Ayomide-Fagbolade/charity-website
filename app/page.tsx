@@ -14,7 +14,7 @@ import HeroCarousel from "@/components/HeroCarousel"
 export default async function Page() {
   const projects = await getAllProjects()
   const posts = await getAllPosts()
-  
+
   const featuredProjects = projects.slice(0, 3)
   const recentPosts = posts.slice(0, 3)
 
@@ -22,7 +22,7 @@ export default async function Page() {
     <div className="flex flex-col">
       {/* Hero Section */}
       <HeroCarousel />
-  
+
 
       {/* Impact Stats */}
       <section className="py-16 px-4 bg-primary text-white">
@@ -108,47 +108,47 @@ export default async function Page() {
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {featuredProjects.map((project) => {
-  // Use the first image if it exists
-  const imageSrc = `/${project.title}.jpg`;
+              // Use the first image if it exists
+              const imageSrc = `/${project.slug}.jpg`;
 
-  return (
-    <Link key={project.slug} href={`/projects/${project.slug}`}>
-      <Card className="h-full hover:shadow-lg transition-shadow">
-        <div className="relative h-48 w-full">
-          {imageSrc ? (
-            <Image
-              src={`${imageSrc}`} // assumes images are in /public/images
-              alt={project.title}
-              fill
-              className="object-cover rounded-t-lg"
-            />
-          ) : (
-            <span className="text-gray-500 text-sm italic flex items-center justify-center h-full">
-              No image available for “{project.title}”
-            </span>
-          )}
-        </div>
-        <CardHeader>
-          <div className="flex flex-wrap gap-2 mb-3">
-            {project.tags.map((tag) => (
-              <Badge key={tag} variant="secondary">
-                {tag}
-              </Badge>
-            ))}
-          </div>
-          <CardTitle className="text-xl">{project.title}</CardTitle>
-          <CardDescription className="line-clamp-2 leading-relaxed">{project.description}</CardDescription>
-          <div className="pt-4">
-            <div className="flex items-center gap-2 text-sm">
-              <span className="font-semibold text-primary">Impact Score:</span>
-              <span className="font-bold">{project.impact_score}/100</span>
-            </div>
-          </div>
-        </CardHeader>
-      </Card>
-    </Link>
-  )
-})}
+              return (
+                <Link key={project.slug} href={`/projects/${project.slug}`}>
+                  <Card className="h-full hover:shadow-lg transition-shadow">
+                    <div className="relative h-48 w-full">
+                      {imageSrc ? (
+                        <Image
+                          src={`${imageSrc}`} // assumes images are in /public/images
+                          alt={project.title}
+                          fill
+                          className="object-cover rounded-t-lg"
+                        />
+                      ) : (
+                        <span className="text-gray-500 text-sm italic flex items-center justify-center h-full">
+                          No image available for “{project.title}”
+                        </span>
+                      )}
+                    </div>
+                    <CardHeader>
+                      <div className="flex flex-wrap gap-2 mb-3">
+                        {project.tags.map((tag) => (
+                          <Badge key={tag} variant="secondary">
+                            {tag}
+                          </Badge>
+                        ))}
+                      </div>
+                      <CardTitle className="text-xl">{project.title}</CardTitle>
+                      <CardDescription className="line-clamp-2 leading-relaxed">{project.description}</CardDescription>
+                      <div className="pt-4">
+                        <div className="flex items-center gap-2 text-sm">
+                          <span className="font-semibold text-primary">Impact Score:</span>
+                          <span className="font-bold">{project.impact_score}/100</span>
+                        </div>
+                      </div>
+                    </CardHeader>
+                  </Card>
+                </Link>
+              )
+            })}
 
           </div>
           <div className="mt-8 text-center md:hidden">

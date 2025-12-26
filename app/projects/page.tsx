@@ -29,8 +29,8 @@ export default async function ProjectsPage() {
         <div className="container mx-auto max-w-6xl">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {projects.map((project) => {
-              // Try to use an image named after the project title
-              const imagePath = `/${project.title}.jpg`
+              // Try to use an image named after the project slug
+              const imagePath = `/${project.slug}.jpg`
 
               return (
                 <Link key={project.slug} href={`/projects/${project.slug}`}>

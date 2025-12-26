@@ -36,8 +36,8 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
     notFound()
   }
 
-  // Attempt to load image from /public based on project title
-  const imagePath = `/${project.title}.jpg`
+  // Attempt to load image from /public based on project slug
+  const imagePath = `/${project.slug}.jpg`
 
   return (
     <div className="flex flex-col">
