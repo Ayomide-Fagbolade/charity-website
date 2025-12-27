@@ -40,6 +40,14 @@ export default function AboutPage() {
 
   ]
 
+  const values = [
+    { title: "Hope", desc: "We nurture belief in better tomorrows.", icon: Sun },
+    { title: "Integrity", desc: "We act honestly and transparently, ensuring every donation serves its true purpose.", icon: Shield },
+    { title: "Empathy", desc: "We listen, care, and act with compassion.", icon: Heart },
+    { title: "Innovation", desc: "We use creativity and collective action to solve social challenges.", icon: Lightbulb },
+    { title: "Sustainability", desc: "We plant seeds for growth that lasts beyond us.", icon: Leaf },
+  ]
+
   return (
     <div className="flex flex-col">
       {/* Hero Section */}
@@ -96,52 +104,19 @@ export default function AboutPage() {
               These principles guide everything we do
             </p>
           </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-6 gap-6 justify-center">
-            <Card className="bg-background lg:col-span-2">
-              <CardHeader>
-                <Sun className="h-10 w-10 text-foreground mb-3" />
-                <CardTitle className="text-lg text-foreground">Hope</CardTitle>
-                <CardDescription className="leading-relaxed">
-                  We nurture belief in better tomorrows.
-                </CardDescription>
-              </CardHeader>
-            </Card>
-            <Card className="bg-background lg:col-span-2">
-              <CardHeader>
-                <Shield className="h-10 w-10 text-foreground mb-3" />
-                <CardTitle className="text-lg text-foreground">Integrity</CardTitle>
-                <CardDescription className="leading-relaxed">
-                  We act honestly and transparently, ensuring every donation serves its true purpose.
-                </CardDescription>
-              </CardHeader>
-            </Card>
-            <Card className="bg-background lg:col-span-2">
-              <CardHeader>
-                <Heart className="h-10 w-10 text-foreground mb-3" />
-                <CardTitle className="text-lg text-foreground">Empathy</CardTitle>
-                <CardDescription className="leading-relaxed">
-                  We listen, care, and act with compassion.
-                </CardDescription>
-              </CardHeader>
-            </Card>
-            <Card className="bg-background lg:col-span-2 lg:col-start-2">
-              <CardHeader>
-                <Lightbulb className="h-10 w-10 text-foreground mb-3" />
-                <CardTitle className="text-lg text-foreground">Innovation</CardTitle>
-                <CardDescription className="leading-relaxed">
-                  We use creativity and collective action to solve social challenges.
-                </CardDescription>
-              </CardHeader>
-            </Card>
-            <Card className="bg-background md:col-span-2 md:w-1/2 md:mx-auto lg:col-span-2 lg:w-auto lg:mx-0">
-              <CardHeader>
-                <Leaf className="h-10 w-10 text-foreground mb-3" />
-                <CardTitle className="text-lg text-foreground">Sustainability</CardTitle>
-                <CardDescription className="leading-relaxed">
-                  We plant seeds for growth that lasts beyond us.
-                </CardDescription>
-              </CardHeader>
-            </Card>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-6 justify-center items-stretch">
+            {values.map((v) => {
+              const Icon = v.icon
+              return (
+                <Card key={v.title} className="bg-background lg:col-span-2 h-full">
+                  <CardHeader className="flex flex-col items-center text-center p-6">
+                    <Icon className="h-8 w-8 md:h-10 md:w-10 text-foreground mb-3" />
+                    <CardTitle className="text-lg text-foreground">{v.title}</CardTitle>
+                    <CardDescription className="leading-relaxed text-sm md:text-base">{v.desc}</CardDescription>
+                  </CardHeader>
+                </Card>
+              )
+            })}
           </div>
         </div>
       </section>
