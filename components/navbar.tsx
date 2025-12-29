@@ -75,16 +75,23 @@ export function Navbar() {
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center gap-6">
           <ul className="flex items-center gap-6 mr-4">
-            {navLinks.map((link) => (
-              <li key={link.href}>
-                <Link
-                  href={link.href}
-                  className="text-sm font-medium text-foreground/80 hover:text-foreground transition-colors"
-                >
-                  {link.label}
-                </Link>
-              </li>
-            ))}
+            {navLinks.map((link) => {
+              // Only show Admin link if user is admin
+              if (link.href === "/admin" && profile?.role !== 'admin') {
+                return null
+              }
+
+              return (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    className="text-sm font-medium text-foreground/80 hover:text-foreground transition-colors"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              )
+            })}
           </ul>
 
           {user ? (
@@ -163,17 +170,22 @@ export function Navbar() {
           onClick={(e) => e.stopPropagation()}
         >
           <ul className="flex flex-col items-center gap-6 w-full">
-            {navLinks.map((link) => (
-              <li key={link.href} className="w-full text-center">
-                <Link
-                  href={link.href}
-                  onClick={() => setIsMenuOpen(false)}
-                  className="block py-2 text-xl font-semibold text-foreground/80 hover:text-primary transition-colors border-b border-transparent hover:border-primary/20"
-                >
-                  {link.label}
-                </Link>
-              </li>
-            ))}
+            {navLinks.map((link) => {
+              if (link.href === "/admin" && profile?.role !== 'admin') {
+                return null
+              }
+              return (
+                <li key={link.href} className="w-full text-center">
+                  <Link
+                    href={link.href}
+                    onClick={() => setIsMenuOpen(false)}
+                    className="block py-2 text-xl font-semibold text-foreground/80 hover:text-primary transition-colors border-b border-transparent hover:border-primary/20"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              )
+            })}
           </ul>
           <Link
             href={user ? "/dashboard" : "/auth"}
