@@ -1,0 +1,65 @@
+rules_version = '2';
+service firebase.storage {
+  match /b/{bucket}/o {
+    
+    // Helper Functions
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+
+    function isLessThan5MB() {
+      return request.resource.size < 5 * 1024 * 1024;
+    }
+
+    function isSupportedImage() {
+      return request.resource.contentType.matches('image/.*');
+    }
+
+    function isSupportedFile() {
+      return request.resource.contentType.matches('image/.*|application/pdf');
+    }
+
+    // 1. Transaction Receipts
+    // Used for Donation proofs (Cash transfer screenshots) or Item donation photos
+    // Path: receipts/{donation|purchase}/{refId}_filename
+    match /receipts/{type}/{fileName} {
+      // Donors need to see their own, and Admins need to verify.
+      // For a charity, we allow all authenticated users to read receipts to simplify admin verification 
+      // without complex custom claims.
+      allow read: if isAuthenticated();
+      
+      // Only authenticated users can upload, with size and type restrictions
+      allow create: if isAuthenticated() && isLessThan5MB() && isSupportedFile();
+      
+      // Once uploaded, proof cannot be modified to ensure financial integrity
+      allow update: if false;
+      
+      // Deletion allowed for cleanup
+      allow delete: if isAuthenticated();
+    }
+
+    // 2. Marketplace Item Images
+    // Images of products listed by students
+    match /marketplace/{fileName} {
+      // Marketplace must be public so visitors can browse items
+      allow read: if true;
+      
+      // Any verified student can list items with photos
+      allow create: if isAuthenticated() && isLessThan5MB() && isSupportedImage();
+      
+      // Allow update/delete for management
+      allow update, delete: if isAuthenticated();
+    }
+
+    // 3. Static Assets / Brand Assets (Optional)
+    match /assets/{fileName} {
+      allow read: if true;
+      allow write: if false;
+    }
+
+    // 4. Fallback Safety
+    match /{allPaths=**} {
+      allow read, write: if false;
+    }
+  }
+}

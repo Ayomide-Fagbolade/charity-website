@@ -3,11 +3,25 @@
 import { useState, useEffect } from "react"
 import Link from "next/link"
 import Image from "next/image"
-import { Menu, X } from "lucide-react"
+import { Menu, X, User as UserIcon, LogOut, LayoutDashboard, Heart } from "lucide-react"
 import { cn } from "@/lib/utils"
+import { Button } from "@/components/ui/button"
+import { useAuthContext } from "@/hooks/use-auth-context"
+import { auth } from "@/lib/firebase/config"
+import { signOut } from "firebase/auth"
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu"
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 
 export function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const { user, profile } = useAuthContext()
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen)
 
@@ -33,9 +47,11 @@ export function Navbar() {
 
   const navLinks = [
     { href: "/projects", label: "Projects" },
+    { href: "/marketplace", label: "Marketplace" },
+    { href: "/dashboard", label: "Impact" },
     { href: "/blog", label: "Blog" },
     { href: "/about", label: "About" },
-    { href: "/contact", label: "Contact" },
+    { href: "/admin", label: "Admin" },
   ]
 
   return (
@@ -58,7 +74,7 @@ export function Navbar() {
 
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center gap-6">
-          <ul className="flex items-center gap-6">
+          <ul className="flex items-center gap-6 mr-4">
             {navLinks.map((link) => (
               <li key={link.href}>
                 <Link
@@ -70,12 +86,54 @@ export function Navbar() {
               </li>
             ))}
           </ul>
-          <Link
-            href="/donate"
-            className="inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-white hover:bg-primary/90 transition-colors shadow-sm"
-          >
-            Donate
-          </Link>
+
+          {user ? (
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button variant="ghost" className="relative h-10 w-10 rounded-full">
+                  <Avatar className="h-10 w-10 border border-border">
+                    <AvatarImage src={user.photoURL || undefined} alt={user.email || ""} />
+                    <AvatarFallback className="bg-primary/10 text-primary">
+                      {user.email?.[0].toUpperCase()}
+                    </AvatarFallback>
+                  </Avatar>
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent className="w-56" align="end" forceMount>
+                <DropdownMenuLabel className="font-normal">
+                  <div className="flex flex-col space-y-1">
+                    <p className="text-sm font-medium leading-none">{profile?.displayName || user.email?.split('@')[0]}</p>
+                    <p className="text-xs leading-none text-muted-foreground">{user.email}</p>
+                  </div>
+                </DropdownMenuLabel>
+                <DropdownMenuSeparator />
+                <DropdownMenuItem asChild>
+                  <Link href="/dashboard">
+                    <LayoutDashboard className="mr-2 h-4 w-4" />
+                    <span>Dashboard</span>
+                  </Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <Link href="/donate">
+                    <Heart className="mr-2 h-4 w-4" />
+                    <span>Donate</span>
+                  </Link>
+                </DropdownMenuItem>
+                <DropdownMenuSeparator />
+                <DropdownMenuItem onClick={() => signOut(auth)}>
+                  <LogOut className="mr-2 h-4 w-4" />
+                  <span>Log out</span>
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
+          ) : (
+            <Link
+              href="/auth"
+              className="inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-white hover:bg-primary/90 transition-colors shadow-sm"
+            >
+              Sign In
+            </Link>
+          )}
         </div>
 
         {/* Mobile Menu Button */}
@@ -118,12 +176,23 @@ export function Navbar() {
             ))}
           </ul>
           <Link
-            href="/donate"
+            href={user ? "/dashboard" : "/auth"}
             onClick={() => setIsMenuOpen(false)}
             className="w-full inline-flex items-center justify-center rounded-md bg-primary px-8 py-3 text-lg font-medium text-white hover:bg-primary/90 transition-all shadow-md active:scale-95"
           >
-            Donate Now
+            {user ? "Go to Dashboard" : "Sign In"}
           </Link>
+          {user && (
+            <button
+              onClick={() => {
+                signOut(auth);
+                setIsMenuOpen(false);
+              }}
+              className="text-muted-foreground text-sm font-medium hover:text-red-500 transition-colors"
+            >
+              Sign Out
+            </button>
+          )}
         </div>
       </div>
     </header>

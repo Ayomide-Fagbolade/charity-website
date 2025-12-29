@@ -30,19 +30,22 @@ export default async function ProjectsPage() {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {projects.map((project) => {
               // Try to use an image named after the project slug
-              const imagePath = `/${project.slug}.jpg`
+              const imagePath = project.images?.[0] || `/${project.slug}.jpg`
 
               return (
                 <Link key={project.slug} href={`/projects/${project.slug}`}>
-                  <Card className="h-full hover:shadow-lg transition-shadow">
-                    <div className="relative h-48 w-full">
+                  <Card className="group h-full border-none shadow-xl bg-background/50 backdrop-blur-sm hover:bg-background transition-all duration-500 overflow-hidden rounded-3xl">
+                    <div className="relative h-56 w-full overflow-hidden">
                       {imagePath ? (
-                        <Image
-                          src={imagePath}
-                          alt={project.title}
-                          fill
-                          className="object-cover rounded-t-lg"
-                        />
+                        <>
+                          <Image
+                            src={imagePath}
+                            alt={project.title}
+                            fill
+                            className="object-cover transition-transform duration-700 group-hover:scale-110"
+                          />
+                          <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                        </>
                       ) : (
                         <span className="text-gray-500 text-sm italic flex items-center justify-center h-full">
                           No image available for “{project.title}”

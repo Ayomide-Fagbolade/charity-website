@@ -6,6 +6,14 @@ export interface Project {
   published: boolean
   impact_score: number
   content: string
+  images: string[]
+  canDonate: boolean
+  canSell: boolean
+  impact_metrics?: {
+    amount: number
+    label: string
+    description: string
+  }[]
 }
 
 export interface Post {
@@ -26,7 +34,26 @@ const projectsData: Project[] = [
     tags: ["Emergency", "Relief", "Humanitarian"],
     published: true,
     impact_score: 98,
-    content: "# Disaster Relief & Emergency Support\n\nWhen catastrophe strikes, every second counts. Our Disaster Relief & Emergency Support program is designed to mobilize rapid resources to areas affected by natural disasters, fires, floods, and other humanitarian crises.\n\nWe work in coordination with local partners to deliver:\n- **Emergency Shelter**: Temporary housing for displaced families.\n- **Food & Water**: Immediate access to nutritional supplies and clean drinking water.\n- **Medical Aid**: First aid supplies and access to basic healthcare.\n\nYour donation to this fund ensures we can respond instantly when disaster hits, saving lives and helping communities begin the long road to recovery with dignity.",
+    content: `## The Crisis
+When natural disasters strike, the first 72 hours are critical. Families lose their homes, access to clean water vanishes, and medical infrastructure often collapses. Without immediate intervention, the initial catastrophe is followed by a secondary wave of preventable disease and hardship.
+
+## Our Approach
+The BridgeSeed Disaster Relief model focuses on rapid mobilization. We maintain "Emergency Ready" kits—containing food, water purification tablets, and first aid—that can be deployed within hours. 
+
+Beyond immediate aid, we stay in the affected areas for up to 6 months to help rebuild. This includes:
+- **Temporary Classrooms**: Ensuring children don't lose months of education.
+- **Micro-grants**: Helping small local businesses reopen to restart the local economy.
+
+## Long-term Vision
+We don't just want to respond to disasters; we want to build communities that can withstand them. A portion of every disaster relief donation goes toward 'Resilience Training' for local leaders, teaching them how to organize community responses before international aid even arrives.`,
+    images: ["/disaster-relief.jpg"],
+    canDonate: true,
+    canSell: false,
+    impact_metrics: [
+      { amount: 50, label: "Emergency Food Kit", description: "Provides 3 days of essential nutrition for a displaced victim." },
+      { amount: 150, label: "Clean Water Filter", description: "Provides a family with safe drinking water for up to 6 months." },
+      { amount: 500, label: "Emergency Shelter Kit", description: "A high-grade thermal tent and blankets for a family of four." }
+    ]
   },
   {
     slug: "orphanage-support",
@@ -35,7 +62,25 @@ const projectsData: Project[] = [
     tags: ["Children", "Care", "Education"],
     published: true,
     impact_score: 95,
-    content: "# Orphanage Support Program\n\nEvery child deserves a safe home, a warm meal, and the chance to dream. Our Orphanage Support Program partners with verified orphanages to bridge the gap between basic survival and thriving childhoods.\n\nWe focus on:\n- **Nutritional Support**: Ensuring children receive balanced, healthy meals daily.\n- **Educational Supplies**: Providing books, uniforms, and school fees to keep children in class.\n- **Living Conditions**: Improving sleeping quarters and sanitation facilities.\n\nBy supporting this project, you are not just giving supplies; you are showing these children that they are seen, valued, and loved by a wider community.",
+    content: `## The Need
+Over 3,000 children across the region are currently living in institutions that struggle to meet their most basic nutritional and educational needs. Growing up in such environments without proper support can lead to significant long-term challenges in adulthood.
+
+## Our Approach
+BridgeSeed doesn't just "fund" orphanages; we partner with them. We provide:
+- **Nutritional Counseling**: Working with kitchens to ensure meals are balanced and growth-focused.
+- **The "Library Project"**: Building small, vibrant reading rooms within each home to cultivate a love for learning.
+- **Skill Workshops**: For older children, we bring in mentors to teach coding, carpentry, and financial literacy.
+
+## Impact Stories
+Last year, through this program, 12 children from our partnered homes successfully transitioned to university with full scholarships. By providing the environment they need to thrive, we are giving them back the childhood they deserve.`,
+    images: ["/orphanage-support.jpg"],
+    canDonate: true,
+    canSell: false,
+    impact_metrics: [
+      { amount: 30, label: "Education Pack", description: "One school bag filled with notebooks, pens, and basic supplies." },
+      { amount: 100, label: "Nutritional Boost", description: "Supplements for a child for one month including vitamins and milk." },
+      { amount: 300, label: "Scholarship Seed", description: "Covers local school registration and fees for one child per year." }
+    ]
   },
   {
     slug: "student-marketplace",
@@ -44,7 +89,20 @@ const projectsData: Project[] = [
     tags: ["Sustainability", "Students", "Community"],
     published: true,
     impact_score: 92,
-    content: "# Student Thrift & Marketplace\n\nStudent life can be expensive, and waste is often rampant on university campuses. The Student Thrift & Marketplace creates a circular economy where excess becomes opportunity.\n\n**How it works:**\n- We collect gently used furniture, textbooks, electronics, and clothing from students who no longer need them.\n- These items are cleaned, organized, and made available to other students at little to no cost.\n- Students facing financial hardship are given priority access.\n\nThis initiative reduces landfill waste, lowers the cost of living for students, and fosters a spirit of sharing and mutual support across campus.",
+    content: `## Circular Economy on Campus
+University life shouldn't cost the earth. Every year, graduating students discard tons of usable furniture, books, and electronics. Meanwhile, incoming students struggle to afford these same essentials.
+
+## How we Bridge the Gap
+The Student Thrift & Marketplace is a student-led initiative that:
+1. **Collects**: We organize "Drive Days" where students can drop off items.
+2. **Restores**: Volunteers clean and repair furniture and electronics.
+3. **Redistributes**: Students can pick up items for a nominal fee or for free if they have verified financial needs.
+
+## Sustainability Impact
+By keeping items in use, we have diverted over 5 tons of waste from landfills this year alone. It's a win for the planet and a win for the student pocket.`,
+    images: ["/student-marketplace.jpg"],
+    canDonate: false,
+    canSell: true,
   },
   {
     slug: "community-impact-fund",
@@ -53,7 +111,25 @@ const projectsData: Project[] = [
     tags: ["General", "Flexible", "Impact"],
     published: true,
     impact_score: 90,
-    content: "# Community Impact Fund\n\nNeeds change, and flexibility is key to effective aid. The Community Impact Fund constitutes our general donations pool, allowing us to direct resources to where they are most critically needed at any given moment.\n\nWhether it's topping up a shortfall in our Orphanage Support, rushing extra supplies to a disaster zone, or launching a new pilot program for student welfare, this fund powers the agility of BridgeSeed Foundation.\n\n**Why donate here?**\n- **Maximum Efficiency**: Allows us to fill gaps immediately without waiting for specific appeal targets.\n- **Holistic Support**: Supports the operational backbone that makes all our specific projects possible.\n- **Rapid Response**: Gives us the freedom to say 'yes' to urgent pleas for help.\n\nMake a general donation today to empower our entire mission.",
+    content: `## Flexibility is Power
+Sometimes the most urgent need isn't part of a pre-defined project. A sudden medical emergency for a community member, a broken water pump in a remote village, or a unique scholarship opportunity for a bright student—these are the "gaps" that the Community Impact Fund fills.
+
+## Where the Money Goes
+This fund acts as our rapid-response resource. It allows us to:
+- **Triage**: Respond to the most critical needs within 24 hours.
+- **Innovate**: Fund pilot programs that, if successful, can grow into full projects.
+- **Sustain**: Ensure that no ongoing project fails due to temporary funding shortfalls.
+
+## Why it Matters
+By donating to the general fund, you are trusting BridgeSeed's experts to direct your contribution to where it will generate its maximum mathematical impact at that specific moment.`,
+    images: ["/community-impact-fund.jpg"],
+    canDonate: true,
+    canSell: false,
+    impact_metrics: [
+      { amount: 20, label: "Seed for the Green", description: "One fruit tree planted to provide food and shade in a village." },
+      { amount: 120, label: "Mobile Clinic Visit", description: "Covers a professional check-up and basic meds for one elderly person." },
+      { amount: 250, label: "Safe Hub Light", description: "Install one solar-powered light for a safe study space in an rural area." }
+    ]
   },
 ]
 
