@@ -7,12 +7,15 @@ import { UserProfile } from "@/lib/types";
 import { Trophy, Medal, Crown, Star } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { useAuthContext } from "@/hooks/use-auth-context";
 
 export function Leaderboard() {
+    const { user } = useAuthContext();
     const [topUsers, setTopUsers] = useState<UserProfile[]>([]);
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
+        if (!user) return;
         const q = query(
             collection(db, "users"),
             orderBy("dps_balance", "desc"),
@@ -27,6 +30,8 @@ export function Leaderboard() {
 
         return unsubscribe;
     }, []);
+
+    if (!user) return null;
 
     if (loading) return (
         <div className="h-[400px] flex items-center justify-center">
