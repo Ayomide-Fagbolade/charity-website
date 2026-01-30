@@ -4,7 +4,6 @@ export interface Project {
   description: string
   tags: string[]
   published: boolean
-  impact_score: number
   content: string
   images: string[]
   canDonate: boolean
@@ -72,7 +71,6 @@ By continuously collecting and organizing usable donations, we ensure resources 
     description: "flexible funding to address the most urgent needs across all our initiatives, ensuring resources go where they are needed most",
     tags: ["General", "Flexible", "Impact"],
     published: true,
-    impact_score: 90,
     content: `Flexibility is Power
 Sometimes the most urgent need isn't part of a pre-defined project. A sudden medical emergency for a community member, a broken water pump in a remote village, or a unique scholarship opportunity for a bright student—these are the "gaps" that the Community Impact Fund fills.
 
@@ -131,7 +129,7 @@ export function getProjectBySlug(slug: string): Project | undefined {
 }
 
 export function getAllProjects(): Project[] {
-  return projectsData.filter((project) => project.published).sort((a, b) => b.impact_score - a.impact_score)
+  return projectsData.filter((project) => project.published)
 }
 
 export function getPostBySlug(slug: string): Post | undefined {
