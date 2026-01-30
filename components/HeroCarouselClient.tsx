@@ -62,14 +62,12 @@ export default function HeroCarouselClient({ images, variant = 'hero', className
         <div className="container mx-auto max-w-6xl relative z-10">
           <div className="max-w-2xl">
             <div className="space-y-6 bg-black/5 p-8 md:p-10 rounded-2xl shadow-2xl border border-white/10">
-              <Badge variant="secondary" className="text-sm bg-white/90 text-black hover:bg-white">
-                Evidence-Based Philanthropy
-              </Badge>
+
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white">
-                Transforming Excess into Opportunity
+
               </h1>
               <p className="text-lg md:text-xl text-white/90 leading-relaxed">
-                Building sustainable campus communities by redistributing usable items to students and families in need.
+                Building sustainable campus communities by redistributing usable items to students in need.
               </p>
 
               <div className="flex flex-wrap gap-4 pt-4">
