@@ -5,6 +5,7 @@ import {
     signOut,
     onAuthStateChanged,
     sendEmailVerification,
+    sendPasswordResetEmail,
     User
 } from "firebase/auth";
 import { doc, getDoc, setDoc } from "firebase/firestore";
@@ -79,5 +80,9 @@ export function useAuth() {
         }
     };
 
-    return { user, profile, loading, signup, login, logout, resendEmail };
+    const resetPassword = (email: string) => {
+        return sendPasswordResetEmail(auth, email);
+    };
+
+    return { user, profile, loading, signup, login, logout, resendEmail, resetPassword };
 }

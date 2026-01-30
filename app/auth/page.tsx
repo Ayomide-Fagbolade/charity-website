@@ -9,13 +9,37 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { useRouter } from "next/navigation";
 import { useToast } from "@/hooks/use-toast";
-import { LogIn, UserPlus, Mail, Lock, ShieldCheck } from "lucide-react";
+import { LogIn, UserPlus, Mail, Lock, ShieldCheck, RefreshCw } from "lucide-react";
 
 export default function AuthPage() {
     const [loading, setLoading] = useState(false);
-    const { signup, login } = useAuth();
+    const [resetLoading, setResetLoading] = useState(false);
+    const { signup, login, resetPassword } = useAuth();
     const router = useRouter();
     const { toast } = useToast();
+
+    const getErrorMessage = (error: any) => {
+        const code = error?.code || error?.message;
+        console.log("Auth error code:", code);
+
+        switch (code) {
+            case 'auth/wrong-password':
+            case 'auth/invalid-credential':
+                return "The password you entered is incorrect. Please try again.";
+            case 'auth/user-not-found':
+                return "No account found with this email. Please register first.";
+            case 'auth/invalid-email':
+                return "Please enter a valid UM6P email address.";
+            case 'auth/too-many-requests':
+                return "Too many failed attempts. Your account is temporarily locked. Please try again later or reset your password.";
+            case 'auth/email-already-in-use':
+                return "An account with this email already exists. Please login instead.";
+            case 'auth/weak-password':
+                return "Password is too weak. Please use at least 6 characters.";
+            default:
+                return error.message || "An unexpected error occurred. Please try again.";
+        }
+    };
 
     const handleAuth = async (e: React.FormEvent<HTMLFormElement>, type: 'login' | 'signup') => {
         console.log(`Auth started: ${type}`);
@@ -24,7 +48,6 @@ export default function AuthPage() {
         const formData = new FormData(e.currentTarget);
         const email = formData.get("email") as string;
         const password = formData.get("password") as string;
-        console.log(`Email: ${email}`);
 
         try {
             if (type === 'signup') {
@@ -43,12 +66,44 @@ export default function AuthPage() {
             }
         } catch (error: any) {
             toast({
-                title: "Error",
-                description: error.message,
+                title: "Authentication Failed",
+                description: getErrorMessage(error),
                 variant: "destructive",
             });
         } finally {
             setLoading(false);
+        }
+    };
+
+    const handleForgotPassword = async () => {
+        const emailInput = document.getElementById('login-email') as HTMLInputElement;
+        const email = emailInput?.value;
+
+        if (!email) {
+            toast({
+                title: "Email Required",
+                description: "Please enter your email address first to reset your password.",
+                variant: "destructive",
+            });
+            emailInput?.focus();
+            return;
+        }
+
+        setResetLoading(true);
+        try {
+            await resetPassword(email);
+            toast({
+                title: "Reset link sent!",
+                description: `A password reset link has been sent to ${email}. Please check your inbox.`,
+            });
+        } catch (error: any) {
+            toast({
+                title: "Error resetting password",
+                description: getErrorMessage(error),
+                variant: "destructive",
+            });
+        } finally {
+            setResetLoading(false);
         }
     };
 
@@ -79,7 +134,17 @@ export default function AuthPage() {
                                     </div>
                                 </div>
                                 <div className="space-y-2">
-                                    <Label htmlFor="login-password">Password</Label>
+                                    <div className="flex items-center justify-between">
+                                        <Label htmlFor="login-password">Password</Label>
+                                        <button
+                                            type="button"
+                                            onClick={handleForgotPassword}
+                                            disabled={resetLoading}
+                                            className="text-xs text-primary hover:underline font-medium disabled:opacity-50"
+                                        >
+                                            {resetLoading ? "Sending..." : "Forgot Password?"}
+                                        </button>
+                                    </div>
                                     <div className="relative">
                                         <Lock className="absolute left-3 top-3 text-muted-foreground" size={18} />
                                         <Input id="login-password" name="password" type="password" className="pl-10" required />
