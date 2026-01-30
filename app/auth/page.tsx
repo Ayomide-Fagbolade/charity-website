@@ -134,8 +134,12 @@ export default function AuthPage() {
                                     </div>
                                 </div>
                                 <div className="space-y-2">
-                                    <div className="flex items-center justify-between">
-                                        <Label htmlFor="login-password">Password</Label>
+                                    <Label htmlFor="login-password">Password</Label>
+                                    <div className="relative">
+                                        <Lock className="absolute left-3 top-3 text-muted-foreground" size={18} />
+                                        <Input id="login-password" name="password" type="password" className="pl-10" required />
+                                    </div>
+                                    <div className="flex justify-end">
                                         <button
                                             type="button"
                                             onClick={handleForgotPassword}
@@ -144,10 +148,6 @@ export default function AuthPage() {
                                         >
                                             {resetLoading ? "Sending..." : "Forgot Password?"}
                                         </button>
-                                    </div>
-                                    <div className="relative">
-                                        <Lock className="absolute left-3 top-3 text-muted-foreground" size={18} />
-                                        <Input id="login-password" name="password" type="password" className="pl-10" required />
                                     </div>
                                 </div>
                                 <Button type="submit" className="w-full h-11" disabled={loading}>
