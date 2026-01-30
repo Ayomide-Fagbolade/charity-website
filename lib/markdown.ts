@@ -85,11 +85,7 @@ By donating to the general fund, you are trusting BridgeSeed's experts to direct
     images: ["/community-impact-fund.jpg"],
     canDonate: true,
     canSell: false,
-    impact_metrics: [
-      { amount: 20, label: "Seed for the Green", description: "One fruit tree planted to provide food and shade in a village." },
-      { amount: 120, label: "Mobile Clinic Visit", description: "Covers a professional check-up and basic meds for one elderly person." },
-      { amount: 250, label: "Safe Hub Light", description: "Install one solar-powered light for a safe study space in an rural area." }
-    ]
+
   },
 ]
 
