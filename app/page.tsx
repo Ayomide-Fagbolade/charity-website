@@ -82,69 +82,6 @@ export default async function Page() {
         </div>
       </section>
 
-      {/* Featured Projects */}
-      <section className="py-20 px-4 bg-muted/30">
-        <div className="container mx-auto max-w-6xl">
-          <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-12">
-            <div className="flex items-center gap-4 flex-grow">
-              <h2 className="text-3xl md:text-4xl font-bold whitespace-nowrap">Featured Projects</h2>
-              <div className="h-px bg-primary/20 flex-grow hidden md:block" />
-            </div>
-            <Button variant="ghost" asChild className="hidden md:flex shrink-0">
-              <Link href="/projects">
-                View All Projects <ArrowRight className="ml-2 h-4 w-4" />
-              </Link>
-            </Button>
-          </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {featuredProjects.map((project) => {
-              // Use the first image if it exists
-              const imageSrc = `/${project.slug}.jpg`;
-
-              return (
-                <Link key={project.slug} href={`/projects/${project.slug}`}>
-                  <Card className="h-full hover:shadow-lg transition-shadow">
-                    <div className="relative h-48 w-full">
-                      {imageSrc ? (
-                        <Image
-                          src={`${imageSrc}`} // assumes images are in /public/images
-                          alt={project.title}
-                          fill
-                          className="object-cover rounded-t-lg"
-                        />
-                      ) : (
-                        <span className="text-gray-500 text-sm italic flex items-center justify-center h-full">
-                          No image available for “{project.title}”
-                        </span>
-                      )}
-                    </div>
-                    <CardHeader>
-                      <div className="flex flex-wrap gap-2 mb-3">
-                        {project.tags.map((tag) => (
-                          <Badge key={tag} variant="secondary">
-                            {tag}
-                          </Badge>
-                        ))}
-                      </div>
-                      <CardTitle className="text-xl">{project.title}</CardTitle>
-                      <CardDescription className="line-clamp-2 leading-relaxed">{project.description}</CardDescription>
-
-                    </CardHeader>
-                  </Card>
-                </Link>
-              )
-            })}
-
-          </div>
-          <div className="mt-8 text-center md:hidden">
-            <Button variant="outline" asChild>
-              <Link href="/projects">
-                View All Projects <ArrowRight className="ml-2 h-4 w-4" />
-              </Link>
-            </Button>
-          </div>
-        </div>
-      </section>
 
       <MarketplaceImpactSection />
 

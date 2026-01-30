@@ -46,6 +46,7 @@ export function Navbar() {
   }, [isMenuOpen])
 
   const navLinks = [
+    { href: "/", label: "Home" },
     { href: "/projects", label: "Projects" },
     { href: "/marketplace", label: "Marketplace" },
     { href: "/dashboard", label: "Impact" },
