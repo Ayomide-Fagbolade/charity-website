@@ -82,6 +82,11 @@ export function Navbar() {
                 return null
               }
 
+              // Only show Marketplace and Impact links if user is signed in
+              if ((link.href === "/marketplace" || link.href === "/dashboard") && !user) {
+                return null
+              }
+
               return (
                 <li key={link.href}>
                   <Link
@@ -173,6 +178,10 @@ export function Navbar() {
           <ul className="flex flex-col items-center gap-6 w-full">
             {navLinks.map((link) => {
               if (link.href === "/admin" && profile?.role !== 'admin') {
+                return null
+              }
+              // Only show Marketplace and Impact links if user is signed in
+              if ((link.href === "/marketplace" || link.href === "/dashboard") && !user) {
                 return null
               }
               return (
