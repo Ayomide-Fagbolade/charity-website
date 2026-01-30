@@ -64,7 +64,11 @@ export default function HeroCarouselClient({ images, variant = 'hero', className
             <div className="space-y-6 bg-black/5 p-8 md:p-10 rounded-2xl shadow-2xl border border-white/10">
 
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white">
-                Campus Based Support
+                Campus
+
+              </h1>
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white">
+                Based Support
 
               </h1>
               <p className="text-lg md:text-xl text-white/90 leading-relaxed">
