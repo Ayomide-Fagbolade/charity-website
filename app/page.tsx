@@ -32,19 +32,27 @@ export default async function Page() {
         <div className="container mx-auto max-w-6xl">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             <div className="group flex flex-col items-center space-y-3 p-4 rounded-xl transition-all hover:bg-muted/30 hover:scale-105 cursor-default">
-              <Sun className="h-10 w-10 text-primary transition-transform group-hover:scale-110 duration-300" />
+              <div className="h-16 w-16 rounded-2xl bg-amber-500/10 flex items-center justify-center transition-colors group-hover:bg-amber-500/20">
+                <Sun className="h-10 w-10 text-amber-500 transition-transform group-hover:scale-110 duration-300 drop-shadow-[0_0_8px_rgba(245,158,11,0.5)]" />
+              </div>
               <div className="text-xl font-bold tracking-tight">Hope</div>
             </div>
             <div className="group flex flex-col items-center space-y-3 p-4 rounded-xl transition-all hover:bg-muted/30 hover:scale-105 cursor-default">
-              <Shield className="h-10 w-10 text-primary transition-transform group-hover:scale-110 duration-300" />
+              <div className="h-16 w-16 rounded-2xl bg-blue-500/10 flex items-center justify-center transition-colors group-hover:bg-blue-500/20">
+                <Shield className="h-10 w-10 text-blue-500 transition-transform group-hover:scale-110 duration-300 drop-shadow-[0_0_8px_rgba(59,130,246,0.5)]" />
+              </div>
               <div className="text-xl font-bold tracking-tight">Integrity</div>
             </div>
             <div className="group flex flex-col items-center space-y-3 p-4 rounded-xl transition-all hover:bg-muted/30 hover:scale-105 cursor-default">
-              <Heart className="h-10 w-10 text-primary transition-transform group-hover:scale-110 duration-300" />
+              <div className="h-16 w-16 rounded-2xl bg-rose-500/10 flex items-center justify-center transition-colors group-hover:bg-rose-500/20">
+                <Heart className="h-10 w-10 text-rose-500 transition-transform group-hover:scale-110 duration-300 drop-shadow-[0_0_8px_rgba(244,63,94,0.5)]" />
+              </div>
               <div className="text-xl font-bold tracking-tight">Empathy</div>
             </div>
             <div className="group flex flex-col items-center space-y-3 p-4 rounded-xl transition-all hover:bg-muted/30 hover:scale-105 cursor-default">
-              <Leaf className="h-10 w-10 text-primary transition-transform group-hover:scale-110 duration-300" />
+              <div className="h-16 w-16 rounded-2xl bg-emerald-500/10 flex items-center justify-center transition-colors group-hover:bg-emerald-500/20">
+                <Leaf className="h-10 w-10 text-emerald-500 transition-transform group-hover:scale-110 duration-300 drop-shadow-[0_0_8px_rgba(16,185,129,0.5)]" />
+              </div>
               <div className="text-xl font-bold tracking-tight">Sustainability</div>
             </div>
           </div>

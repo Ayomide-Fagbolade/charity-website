@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { Shield, ShoppingBag } from "lucide-react";
+import { Shield, ShoppingBag, Sparkles } from "lucide-react";
 import { useAuthContext } from "@/hooks/use-auth-context";
 
 export function MarketplaceImpactSection() {
@@ -39,8 +39,15 @@ export function MarketplaceImpactSection() {
                             <p className="text-3xl font-black mb-2">UM6P Marketplace</p>
                             <p className="text-white/80 font-medium">Built by students, for students.</p>
                         </div>
-                        <div className="w-full h-full bg-primary/20 flex items-center justify-center">
-                            <ShoppingBag size={120} className="text-primary/40 animate-pulse" />
+                        <div className="w-full h-full bg-primary/20 flex items-center justify-center relative overflow-hidden">
+                            {/* Decorative background glow */}
+                            <div className="absolute inset-0 bg-primary/10 blur-[100px] rounded-full scale-150 animate-pulse" />
+
+                            <div className="relative">
+                                <div className="absolute -inset-8 bg-primary/30 blur-2xl rounded-full animate-pulse" />
+                                <ShoppingBag size={140} className="text-primary relative z-10 drop-shadow-[0_0_15px_rgba(var(--primary),0.5)]" />
+                                <Sparkles size={40} className="absolute -top-4 -right-4 text-accent animate-bounce" />
+                            </div>
                         </div>
                     </div>
                 </div>
