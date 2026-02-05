@@ -2,6 +2,7 @@
 
 import { useAuth } from "@/lib/firebase/auth";
 import { AdminVerificationTable } from "@/components/admin/verification-table";
+import { ContactSubmissionsTable } from "@/components/admin/contact-submissions-table";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ShieldCheck, AlertTriangle } from "lucide-react";
@@ -65,6 +66,8 @@ export default function AdminPage() {
             </div>
 
             <AdminVerificationTable />
+            <ContactSubmissionsTable />
         </div>
     );
 }
+
