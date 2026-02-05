@@ -60,5 +60,11 @@ service cloud.firestore {
       allow create: if request.auth != null; // Typically created by client or function logic
       allow update, delete: if isAdmin();
     }
+
+    // Contact Submissions Collection
+    match /contact_submissions/{submissionId} {
+      allow create: if true; // Public can submit
+      allow read, update, delete: if isAdmin(); // Only admins can view and manage
+    }
   }
 }
