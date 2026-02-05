@@ -1,8 +1,10 @@
 import { notFound } from "next/navigation"
 import Link from "next/link"
+import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { ArrowLeft } from "lucide-react"
 import { getPostBySlug, getAllPosts } from "@/lib/markdown"
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel"
 
 export async function generateStaticParams() {
   const posts = await getAllPosts()
@@ -65,11 +67,43 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
         </div>
       </section>
 
+      {/* Image Carousel */}
+      {post.images && post.images.length > 0 && (
+        <section className="py-12 px-4">
+          <div className="container mx-auto max-w-4xl">
+            <Carousel className="w-full">
+              <CarouselContent>
+                {post.images.map((image, index) => (
+                  <CarouselItem key={index}>
+                    <div className="relative aspect-video overflow-hidden rounded-xl border bg-muted">
+                      <Image
+                        src={image || "/placeholder.svg"}
+                        alt={`${post.title} - Image ${index + 1}`}
+                        fill
+                        className="object-cover"
+                        priority={index === 0}
+                      />
+                    </div>
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+              <div className="hidden md:block">
+                <CarouselPrevious />
+                <CarouselNext />
+              </div>
+            </Carousel>
+          </div>
+        </section>
+      )}
+
       {/* Post Content */}
       <section className="py-12 px-4 bg-muted/30">
         <div className="container mx-auto max-w-4xl">
           <div className="prose prose-lg max-w-none">
-            <div dangerouslySetInnerHTML={{ __html: post.content.replace(/\n/g, "<br />") }} />
+            <div
+              className="whitespace-pre-wrap"
+              dangerouslySetInnerHTML={{ __html: post.content.replace(/\n\n/g, "</p><p>").replace(/\n/g, "<br />") }}
+            />
           </div>
         </div>
       </section>
