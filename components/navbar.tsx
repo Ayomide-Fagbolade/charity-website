@@ -52,6 +52,7 @@ export function Navbar() {
     { href: "/dashboard", label: "Impact" },
     { href: "/blog", label: "Blog" },
     { href: "/about", label: "About" },
+    { href: "/contact", label: "Contact Us" },
     { href: "/admin", label: "Admin" },
   ]
 
