@@ -113,7 +113,7 @@ As students in the Leadership Lab, this experience has been a profound lesson in
 
 We are incredibly grateful to everyone who took the time to speak with us, to listen to our story, and to join our cause. This is just the beginning of the BridgeSeed Foundation’s story, and we are excited to write the next chapter with all of you.
 
-**What’s next?**
+What’s next?
 
 We are actively collecting donations and building our inventory. If you have items you’d like to donate, or if you’re in need of something, please don’t hesitate to reach out. Together, we can build a more connected and resourceful campus community, one belonging at a time.
 
@@ -152,7 +152,7 @@ We are immensely grateful to the Collective Intelligence Consortium for giving u
 
 BridgeSeed Foundation is more than just a project; it's a movement. A movement of students who believe in the power of community, the value of sustainability, and the enduring journey of our belongings. We invite you to join us in this story, whether you are like Jerry, looking to pass on what you no longer need, or like Ahlam, seeking to gather resources for those in need.
 
-**Get involved!**
+Get involved!
 
 Do you have a story to share? Items to donate? A community in need that we can help support? Visit our website and join our WhatsApp community to become a part of the BridgeSeed story. Together, we can transform excess into opportunity and belongings into hope.`,
     images: [
